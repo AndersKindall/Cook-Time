@@ -3,5 +3,5 @@ import ReactDOM from "react-dom";
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
-  ReactDOM.render(<h1>Under Construction</h1>, root);
+  ReactDOM.render(<h1>Under Review</h1>, root);
 });
