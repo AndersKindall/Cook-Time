@@ -1,0 +1,78 @@
+.main-nav-container {
+    position: fixed;
+    width: 100%;
+    height: 65px;
+    background-color: white;
+    border-bottom: 1px;
+    border-style: solid;
+    border-color: lightgrey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.home-link {
+    background-color: white;
+    box-sizing: content-box;
+    display: flex;
+    height: 65px;
+    width: 20%;
+    border-right: 1px;
+    border-style: solid;
+    border-color: lightgrey;
+    align-items: center;
+}
+
+.inner-home-link {
+    background-color: white;
+}
+
+.logo {
+    background-color: white;
+    float: center;
+    width: 95%;
+}
+
+.search-icon {
+    background-color: white;
+    color: grey;
+}
+
+.search-bar-container {
+    background-color: white;
+    box-sizing: content-box;
+    width: 60%;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    color: grey;
+}
+
+.logout-recipe-box {
+    display: flex;
+}
+
+.gear-icon {
+    color: grey;
+    background-color: white;
+    margin-right: 10px;
+}
+
+
+// .login-button {
+//     display: inline-block;
+//     padding: 0.35em 1.23m;
+//     border
+// }
+
+.logout-recipe-box {
+    display: flex;
+}
+
+.logout-recipe-box-link {
+    margin: 10px;
+    padding-right: 10px;
+}
+// .logout-button {
+
+// }

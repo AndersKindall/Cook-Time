@@ -1,18 +1,18 @@
 # == Schema Information
 #
-# Table name: users
+# Table name: ingredients
 #
 #  id              :bigint           not null, primary key
-#  username        :string           not null
-#  email           :string           not null
-#  password_digest :string           not null
-#  session_token   :string           not null
+#  recipe_id       :integer          not null
+#  amount          :string
+#  ingredient_name :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  order           :integer
 #
 require 'test_helper'
 
-class UserTest < ActiveSupport::TestCase
+class IngredientTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
