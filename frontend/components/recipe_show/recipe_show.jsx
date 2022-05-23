@@ -6,14 +6,14 @@ class RecipeShow extends React.Component {
     constructor(props) {
         super(props)
     }
+
     componentDidMount() {
         this.props.getRecipe(this.props.match.params.recipeId).then(res => console.log(res))
     }
 
     render() {
         const { recipe } = this.props;
-        if (!recipe) return null;
-
+        if (!recipe || !recipe.ingredients) return null
         return (
             <div className='recipe-show-container'>
                 <div className='recipe-show-header'>

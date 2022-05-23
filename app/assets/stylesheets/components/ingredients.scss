@@ -1,6 +1,36 @@
-.ingredients-list-item {
+.ingredients-box {
+    margin: 10px;
 }
+
+.ingredients-list-item {
+    display: flex;
+}
+
+.ingredients-title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 900;
+}
+
 .ingredients-amount {
     min-width: 50px;
     display: inline-block;
+    font-size: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    line-height: 18.6px;
+    vertical-align: top;
+    padding-left:  5px;
+    text-align: right;
+    box-sizing: content-box;
+}
+
+.ingredients-name {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    text-align: left;
+    line-height: 18.6px;
+    vertical-align: top;
+    padding-left:  5px;
+    width: 70%
 }

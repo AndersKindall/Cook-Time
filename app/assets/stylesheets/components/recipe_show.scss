@@ -2,6 +2,46 @@
     display: flex;
 }
 
+.recipe-show-title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 36px;
+}
+
+.recipe-time-yield-bolded {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.08em;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+.recipe-show-author {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18px;
+}
+
+.recipe-time-yield {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.recipe-show-description-photo-box {
+    display: block;
+    align-items: center; 
+}
+.recipe-show-photo {
+    vertical-align: middle;
+}
+.recipe-show-description {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.recipe-show-steps-ingredients-list {
+    width: 30%;
+}
+
+.recipe-show-steps-list {
+    width: 70%;
+}
+
 // .recipe-show-description-photo-box {
 //     display: flex;
 // }

@@ -8,7 +8,7 @@ class StepList extends React.Component {
         return (
             <div className='steps-box'>
                 <h1 className='steps-title'>PREPARATION</h1>
-                <ul className='steps-list'>
+                <ol className='steps-list'>
                     {
                         steps.map((step) => {
                             return (
@@ -20,7 +20,7 @@ class StepList extends React.Component {
                             )
                         })
                     }
-                </ul>
+                </ol>
             </div>
         )
     }
