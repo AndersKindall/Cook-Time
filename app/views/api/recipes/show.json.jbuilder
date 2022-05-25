@@ -15,3 +15,14 @@
             end
         end
     end
+    if @recipe.comments
+        json.comments do 
+            @recipe.comments.each do |comment|
+                json.set! comment.id do
+                    json.extract! comment, :id, :recipe_id, :user_id, :content, :created_at
+                    json.author comment.user.username
+                    json.datestamp comment.datestamp
+                end
+            end
+        end
+    end

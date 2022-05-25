@@ -262,3 +262,7 @@ step2 = Step.create!(
     order_number: 2,
     content: "Gently crack eggs into skillet over tomatoes. Season eggs with salt and pepper. Transfer skillet to oven and bake until eggs are just set, 7 to 10 minutes. Sprinkle with cilantro and serve with hot sauce."
 )
+
+
+comment1 = Comment.create!(recipe_id: recipe1.id, content: "Great breakfast food!", user_id: 1)
+comment2 = Comment.create!(recipe_id: recipe1.id, content: "Making this has become a Saturday tradition in our household.  I skip the bell pepper and add canned chipotles to up the heat level.", user_id: 3)

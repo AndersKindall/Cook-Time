@@ -1,6 +1,8 @@
 import React from 'react'
 import IngredientList from './ingredient_list';
 import StepList from './steps_list';
+import CommentsBox from './comments_box';
+import { deleteCurrComment, updateCurrComment } from '../../actions/comment_actions';
 
 class RecipeShow extends React.Component {
     constructor(props) {
@@ -12,7 +14,7 @@ class RecipeShow extends React.Component {
     }
 
     render() {
-        const { recipe } = this.props;
+        const { recipe, currentUser, comments, addComment, updateCurrComment, deleteCurrComment } = this.props;
         if (!recipe || !recipe.ingredients) return null
         return (
             <div className='recipe-show-container'>
@@ -36,10 +38,15 @@ class RecipeShow extends React.Component {
                         <IngredientList key={recipe.id} ingredients={Object.values(recipe.ingredients)} />
                     </div>
                     <div className='recipe-show-steps-list'>
-                        <StepList key={recipe.id} steps={Object.values(recipe.steps)} />
+                        <div className='steps-list'>
+                            <StepList key={recipe.id} steps={Object.values(recipe.steps)} />
+                        </div>
+                        <div className='comments-container'>
+                            <CommentsBox comments={comments} recipe={recipe} addComment={addComment} updateCurrComment={updateCurrComment} deleteCurrComment={deleteCurrComment} currentUser={currentUser}/>
+                        </div>
                     </div>
-
                 </div>
+        
             </div>
             
         )
