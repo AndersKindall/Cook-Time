@@ -1,5 +1,7 @@
 import React from 'react';
 
+import CommentArticle from './comment_article';
+
 class CommentsBox extends React.Component {
     constructor(props) {
         super(props)
@@ -28,6 +30,7 @@ class CommentsBox extends React.Component {
     }
 
     render() {
+        const {comments, updateCurrComment, deleteCurrComment, currentUser} = this.props
         return (
             <div>
                 <h1 className='comments-head'>Cooking Notes</h1>
@@ -42,6 +45,22 @@ class CommentsBox extends React.Component {
                                 onClick={this.state.input.length >= 5 ? this.handleSubmit : () => {}} >Add Note</div>
                         </div>
                     </form>
+                </div>
+                <div className='comments-container-head-box'>
+                    <div className='comments-container-head'>
+                        <h1 className='comments-container-head-title'> All <span className='comments-container-comments-number'>{comments.length}</span></h1>
+                    </div>
+                </div>
+                <div className='comments-container' >
+                    {comments.length === 0 ?
+                        <p className='comments-contaianer-empty' >There are no notes on this recipe yet.</p>
+                    :
+                        <div className='comments-container-comments' >
+                            {comments.map((comment, index) => {
+                                return <CommentArticle key={index} comment={comment} updateCurrComment={updateCurrComment} delteCurrComment={deleteCurrComment} currentUser={currentUser} />
+                            })} 
+                        </div>                            
+                    }
                 </div>
             </div>
         )

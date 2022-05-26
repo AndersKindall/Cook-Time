@@ -2,7 +2,6 @@ import React from 'react'
 import IngredientList from './ingredient_list';
 import StepList from './steps_list';
 import CommentsBox from './comments_box';
-import { deleteCurrComment, updateCurrComment } from '../../actions/comment_actions';
 
 class RecipeShow extends React.Component {
     constructor(props) {
