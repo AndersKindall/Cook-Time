@@ -13,7 +13,7 @@ class CommentArticle extends React.Component {
     }
 
     edit() {
-        this.setState({ editing: ( this.state.editing ? !this.state.editing : this.state.editing )})
+        this.setState({ editing: !this.state.editing })
     }
 
     handleChange(e) {
@@ -27,6 +27,7 @@ class CommentArticle extends React.Component {
     }
 
     render() {
+        
         let {comment, deleteCurrComment, currentUser} = this.props;
         return (
             <div className='comments-article-outer-container'>
@@ -41,7 +42,7 @@ class CommentArticle extends React.Component {
                     <div className='comments-article-author' >{comment.author}</div>
                     <div className='comments-article-date' >{comment.datestamp} ago</div>
                 </div>
-                {this.state.edit
+                {this.state.editing
                 ?
                     <form className='update-comment-form' onSubmit={this.handleSubmit} >
                         <textarea className='update-comment-input'

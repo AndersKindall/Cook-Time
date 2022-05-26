@@ -3,9 +3,9 @@ import * as RecipeAPIUtil from '../util/recipe_api_util'
 export const RECEIVE_RECIPE = 'RECEIVE_RECIPE';
 export const RECEIVE_ALL_RECIPES = 'RECEIVE_ALL_RECIPES';
 
-export const receiveRecipe = recipe => ({
+export const receiveRecipe = payload => ({
     type: RECEIVE_RECIPE,
-    recipe
+    payload
 });
 
 export const receiveAllRecipes = recipes => ({
@@ -15,7 +15,7 @@ export const receiveAllRecipes = recipes => ({
 
 export const getRecipe = recipeId => dispatch => (
     RecipeAPIUtil.fetchRecipe(recipeId)
-        .then(recipe => dispatch(receiveRecipe(recipe)))
+        .then(payload => dispatch(receiveRecipe(payload)))
 );
 
 export const getAllRecipes = () => dispatch => (

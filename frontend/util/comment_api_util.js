@@ -7,16 +7,16 @@ export const postComment = (recipeId, content) => {
     })
 }
 
-export const updateComment = (commentId, text) => {
+export const updateComment = (commentId, content) => {
     return $.ajax({
         method: 'PATCH',
         url: `/api/comments/${commentId}`,
-        data: { comment: { text }}
+        data: { comment: { content }}
     })
 }
 
 export const deleteComment = (commentId) => {
-    return $.ajxa({
+    return $.ajax({
         method: 'DELETE',
         url: `/api/comments/${commentId}`
     })

@@ -17,8 +17,8 @@ const NavBar = ({ currentUser, logout, openModal }) => {
     const logoutButton = () => (
         <nav className='logout-recipe-box'>
             
-            <Link className="logout-receipe-box-link" to={`/users/${currentUser.id}`}>
-                Your Recipe Box        
+            <Link className="logout-recipe-box-link" to={`/recipes`}>
+                All Recipes        
             </Link>
             <button className="logout-button" onClick={logout}>Log Out</button>
         </nav>

@@ -2,11 +2,13 @@
     margin: 10px;
 }
 .steps-title {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: 900;
+    font-family: 'Alfa Slab One', cursive;
+    font-weight: 600;
+    letter-spacing: .05rem;
+    font-size: 12px;
 }
 .steps-list {
-    font-size: 15px;
+    font-size: 13px;
     line-height: 1.45em;
     font-weight: 400;
 }
@@ -15,10 +17,10 @@
 }
 
 .step-number {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
 }
 
 .step-content {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }

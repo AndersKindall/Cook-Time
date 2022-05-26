@@ -1,4 +1,4 @@
-
+json.recipe do
     json.extract! @recipe, :id, :dish_name, :cook_time, :description, :author, :yield
     json.photoUrl url_for(@recipe.photo)
     json.ingredients do 
@@ -15,14 +15,15 @@
             end
         end
     end
+end
+json.comments do
     if @recipe.comments
-        json.comments do 
-            @recipe.comments.each do |comment|
-                json.set! comment.id do
-                    json.extract! comment, :id, :recipe_id, :user_id, :content, :created_at
-                    json.author comment.user.username
-                    json.datestamp comment.datestamp
-                end
+        @recipe.comments.each do |comment|
+            json.set! comment.id do
+                json.extract! comment, :id, :recipe_id, :user_id, :content, :created_at
+                json.author comment.user.username
+                json.datestamp comment.datestamp
             end
         end
     end
+end

@@ -8,7 +8,7 @@ const recipesReducer = (state={}, action) => {
         case RECEIVE_ALL_RECIPES:
             return action.recipes;
         case RECEIVE_RECIPE:
-            return Object.assign({}, state, {[action.recipe.id]: action.recipe})
+            return Object.assign({}, state, {[action.payload.recipe.id]: action.payload.recipe})
         default:
             return state;
     }

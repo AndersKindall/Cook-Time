@@ -57,7 +57,7 @@ class CommentsBox extends React.Component {
                     :
                         <div className='comments-container-comments' >
                             {comments.map((comment, index) => {
-                                return <CommentArticle key={index} comment={comment} updateCurrComment={updateCurrComment} delteCurrComment={deleteCurrComment} currentUser={currentUser} />
+                                return <CommentArticle key={index} comment={comment} updateCurrComment={updateCurrComment} deleteCurrComment={deleteCurrComment} currentUser={currentUser} />
                             })} 
                         </div>                            
                     }

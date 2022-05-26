@@ -1,3 +1,11 @@
+// .recipe-show-container {
+//     display: flex;
+//     align-items: center;
+//     flex-direction: column;
+//     width: 100%;
+//     padding: 24px 0px;
+//     background-color: white;
+// }
 .recipe-show-steps-ingredients-box {
     display: flex;
 }
@@ -8,20 +16,21 @@
 }
 
 .recipe-time-yield-bolded {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.08em;
-    font-weight: 900;
-    letter-spacing: 1px;
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .05rem;
 }
 .recipe-show-author {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 15px;
-    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
     line-height: 18px;
 }
 
 .recipe-time-yield {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
 }
 .recipe-show-description-photo-box {
     display: block;
@@ -32,6 +41,8 @@
 }
 .recipe-show-description {
     font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 12px;
+    line-height: 1.4;
 }
 
 .recipe-show-steps-ingredients-list {
