@@ -5,8 +5,6 @@ import RootReducer from '../reducers/root_reducer';
 
 const middlewares = [thunk];
 
-
-
 const configureStore = (preloadedState = {}) => (
     createStore(
         RootReducer,
