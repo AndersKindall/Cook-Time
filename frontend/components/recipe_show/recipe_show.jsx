@@ -9,7 +9,7 @@ class RecipeShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getRecipe(this.props.match.params.recipeId).then(res => console.log(res))
+        this.props.getRecipe(this.props.match.params.recipeId)
     }
 
     render() {
