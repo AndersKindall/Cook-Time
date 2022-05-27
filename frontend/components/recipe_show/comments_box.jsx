@@ -53,7 +53,7 @@ class CommentsBox extends React.Component {
                 </div>
                 <div className='comments-container' >
                     {comments.length === 0 ?
-                        <p className='comments-contaianer-empty' >There are no notes on this recipe yet.</p>
+                        <p className='comments-container-empty' >There are no notes on this recipe yet.</p>
                     :
                         <div className='comments-container-comments' >
                             {comments.map((comment, index) => {
