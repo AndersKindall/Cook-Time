@@ -17,6 +17,24 @@ export const receiveAllRecipes = recipes => ({
     recipes
 });
 
+export const receiveSearch = (recipes) => ({
+    type: RECEIVE_SEARCH,
+    recipes
+});
+
+export const clearSearch = () => ({
+    type: CLEAR_SEARCH,
+});
+
+export const clearSearchPage = () => ({
+    type: CLEAR_SEARCH_PAGE,
+});
+
+export const receiveSearchPage = (recipes) => ({
+    type: RECEIVE_SEARCH_PAGE,
+    recipes
+});
+
 export const getRecipe = recipeId => dispatch => (
     RecipeAPIUtil.fetchRecipe(recipeId)
         .then(payload => dispatch(receiveRecipe(payload)))
@@ -25,4 +43,14 @@ export const getRecipe = recipeId => dispatch => (
 export const getAllRecipes = () => dispatch => (
     RecipeAPIUtil.fetchRecipes()
         .then(recipes => dispatch(receiveAllRecipes(recipes)))
+);
+
+export const search = (query) => dispatch => (
+    RecipeAPIUtil.searchRecipes(query)
+        .then(recipes => dispatch(receiveSearch(recipes)))
+);
+
+export const searchPage = (query) => dispatch => (
+    RecipeAPIUtil.searchRecipes(query)
+        .then(recupes => dispatch(receiveSearchPage(recipes)))
 );
