@@ -52,5 +52,5 @@ export const search = (query) => dispatch => (
 
 export const searchPage = (query) => dispatch => (
     RecipeAPIUtil.searchRecipes(query)
-        .then(recupes => dispatch(receiveSearchPage(recipes)))
+        .then(recipes => dispatch(receiveSearchPage(recipes)))
 );
