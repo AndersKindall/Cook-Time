@@ -24,7 +24,7 @@ class SearchRecipes extends React.Component {
 
         if (searches.length === 0) return (
             <div className='no-search-results'>
-                <h1 className="no-search-results-header">No recipe results for "{this.props.match.params.query}</h1>
+                <h1 className="no-search-results-header">No recipe results for "{this.props.match.params.query}"</h1>
                 <h1 className='no-search-results-subheader'>Search again for other recipes</h1>
             </div>
         );

@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
-
+import { withRouter } from 'react-router-dom';
 import { logout } from '../../actions/session_actions';
 import { closeModal, openModal } from '../../actions/modal_actions';
 import { search, clearSearch } from '../../actions/recipe_actions';
 import NavBar from './navbar';
 
-const mapStateToProps = ({ session }) => {
+const mapStateToProps = state => {
     return {
-        currentUser: session.currentUser,
+        currentUser: state.session.currentUser,
         searches: state.entities.search,
     };
 };
@@ -20,4 +20,4 @@ const mapDispatchToProps = dispatch => ({
     clearSearch: () => dispatch(clearSearch())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NavBar));

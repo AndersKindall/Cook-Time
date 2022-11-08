@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; 
+import { search } from '../../actions/recipe_actions';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -47,9 +48,9 @@ class NavBar extends React.Component {
 
     handleSubmit(e) {
         if (this.state.inputValue === '') {
-            this.props.history.push({ pathname: `/recipes/`};)
+            this.props.history.push({ pathname: `/recipes/`})
         } else {
-            this.props.history.push({pathname: `/search/${this.setState.inputValue}`})
+            this.props.history.push({pathname: `/search/${this.state.inputValue}`})
         }
         this.setState({ inputValue: ''})
         this.props.clearSearch();
@@ -59,17 +60,43 @@ class NavBar extends React.Component {
         const { currentUser, logout, searches } = this.props;
         return (
             <header className="nav-header">
-            <nav className="main-nav-container">
-                <div className="home-link">
-                    <Link className="inner-home-link" to="/" >
-                        <img className="logo" src={window.logo}></img>
-                    </Link>
-                </div>
-                <i className="fas fa-search search-icon"></i>
-                <div className="search-bar-container">What would you like to cook?</div>
-                {currentUser ? logoutButton(currentUser, logout) : sessionLink()}
-                <i className="fa-solid fa-gear gear-icon"></i>
-            </nav>
+                <nav className="main-nav-container">
+                    <div className="home-link">
+                        <Link className="inner-home-link" to="/" >
+                            <img className="logo" src={window.logo}></img>
+                        </Link>
+                    </div>
+                    <div className='nav-bar-search'>
+                        <i className="fas fa-search search-icon"></i>
+                        <div className="search-bar-container">
+                            <form className='search-bar' onSubmit={this.handleSubmit}>
+                                <input onClick={this.showDropdown} onChange={this.handleChange} value={this.state.inputValue} type='text' className='search-input' placeholder='What would you like to cook?' />
+                            </form>
+                        </div>
+                        <i onClick={this.hideDropdown} className={this.state.show ? "fas fa-times-circle" : ''}></i>
+                        {!searches ?
+                            '' :
+                            <ul className='dropdown-search-results'>
+                                {Object.values(searches).map((recipe, idx) => (
+                                    <Link key={idx} to={`/recipes/${recipe.id}`} className='search-results-wrapper' style={{textDecoration: 'none'}}>
+                                        <li className='search-results-child'>
+                                            {recipe.title}
+                                        </li>
+                                    </Link>
+                                )
+                                )}
+                            </ul>
+                        }
+                    </div>
+                    <div className='login-logout'>
+                        <button className='login-button' onClick={() => openModal('login')}>
+                            <p className='login-recipe-box'>Your Recipe Box</p>
+                            <p className='login-login'>Log In</p>
+                        </button>
+                    </div>
+                    {/* {currentUser ? logoutButton(currentUser, logout) : sessionLink()} */}
+                    <i className="fa-solid fa-gear gear-icon"></i>
+                </nav>
         </header>  
         )
     }
@@ -78,13 +105,13 @@ class NavBar extends React.Component {
 
 
 //     const sessionLink = () => (
-//         <nav className='login-logout'>
-//             <button className='login-button' onClick={() => openModal('login')}>
-//                 <p className='login-recipe-box'>Your Recipe Box</p>
-//                 <p className='login-login'>Log In</p>
-//             </button>
+        // <nav className='login-logout'>
+        //     <button className='login-button' onClick={() => openModal('login')}>
+        //         <p className='login-recipe-box'>Your Recipe Box</p>
+        //         <p className='login-login'>Log In</p>
+        //     </button>
 
-//         </nav>
+        // </nav>
 //     );
 
 //     const logoutButton = () => (
