@@ -37,7 +37,7 @@ class SearchRecipes extends React.Component {
                     <div className='recipe-grid'>
                         {searches.map((search, idx) => {
                             let searchId = search.id
-                            let recipe = recipes[searchId]
+                            let recipe = recipes[(searchId - 1)]
                             return <RecipeIndexCard recipe={recipe} key={idx} currentUser={currentUser} openModal={openModal} />
                         }
                         )}
