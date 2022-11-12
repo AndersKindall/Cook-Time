@@ -88,14 +88,20 @@ class NavBar extends React.Component {
                             </ul>
                         }
                     </div>
-                    <div className='login-logout'>
-                        <button className='login-button' onClick={() => openModal('login')}>
-                            <p className='login-recipe-box'>Your Recipe Box</p>
-                            <p className='login-login'>Log In</p>
-                        </button>
+                    <div className='navbar-end'>
+                        <div className='login-logout'>
+                            <div className='login-button' onClick={currentUser ? () => {} : () => this.props.openModal('login')}>
+                                {currentUser ? 
+                                    <div className='login-recipe-box'>Your Recipe Box</div>
+                                :
+                                    <div className='login-recipe-box'>
+                                        <p className='login-login'>Log In</p>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                        <i className="fa-solid fa-gear gear-icon" onClick={currentUser ? () => logout() : () => {}}></i>
                     </div>
-                    {/* {currentUser ? logoutButton(currentUser, logout) : sessionLink()} */}
-                    <i className="fa-solid fa-gear gear-icon"></i>
                 </nav>
         </header>  
         )
