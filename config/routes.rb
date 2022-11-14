@@ -3,10 +3,13 @@ Rails.application.routes.draw do
   get '/api/search/:query', to: 'api/recipes#search', as: 'api_recipes_search', defaults: { format: :json } 
   
   namespace :api, defaults: {format: :json} do
-    resources :users, only: [:create]
+    resources :users, only: [:create, :show]
     resource :session, only: [:create, :destroy]
-    resources :recipes, only: [:show, :index]
+    resources :recipes, only: [:show, :index] do
+      resources :saves, only: [:create]
+    end
     resources :comments, only: [:create, :destroy, :update]
+    resources :saves, only: [:destroy]
   end
   
   root to: 'static_pages#root'
