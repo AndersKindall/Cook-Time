@@ -19,6 +19,9 @@ class Recipe < ApplicationRecord
     has_many :ingredients
     has_many :steps
     has_many :comments
-
+    has_many :saves,
+        class_name: :Save,
+        foreign_key: :recipe_id,
+        dependent: :destroy
     has_one_attached :photo
 end
