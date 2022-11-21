@@ -48,13 +48,33 @@ class RecipeIndexCard extends React.Component {
                     </Link>
                     <div className='recipe-card-bookmark-container' onClick={currentUser ? () => this.handleSave(recipe) : () => {}} >
                     {currentUser ? '' :
-                        <div className='recipe-card-pop-up' >
-                            <div className='recipe-card-pop-up-spacer' />
-                            <div className='recipe-card-pop-up-text' >
-                                {/* <span onClick={() => openModal('login')}></span> */}
+                        <div className='recipe-card-popup' >
+                            <div className='recipe-card-popup-spacer' />
+                            <div className='recipe-card-popup-text' >
+                                <span onClick={() => openModal('login')} className='login-popip-lin'>Log In</span>
+                                <p>or</p>
+                                <span onClick={() => openModal('signup')} className='login-popip-lin'>Sign Up </span>
+                                to save this recipe.
                             </div>
                         </div>
                     }   
+                    {currentUser ?
+                        <div className={recipe.saveId ? 'recipe-card-bookmark recipe-card-bookmark-saved' : 'recipe-card-bookmark'} />
+                        :
+                        <div className='recipe-card-bookmark'/>
+                    }
+                    </div>
+                </div>
+                <div className={this.state.className} onClick={this.toggleModal}>
+                    <div className='modal-save-child' onClick={e => e.stopPropagation()}>
+                        <span className='close-modal-btn' onClick={this.toggleModal}>&#x2715;</span>
+                        <div className='modal-save-body'>
+                            <p className='modal-image-text'>Are you sure you want to remove <span className='modal-save-title'>{recipe.title}</span> from ypur recipe box?</p>
+                            <div className='modal-save-btns'>
+                                <button type='button' onClick={this.toggleModal} className='modal-save-no'>NO</button>
+                                <button type='button' onClick={() => this.handleClick(recipe)} className='modal-save-yes'>YES</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

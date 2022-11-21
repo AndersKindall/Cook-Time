@@ -6,9 +6,14 @@ class RecipeIndex extends React.Component {
     
     componentDidMount() {
         this.props.getAllRecipes();
+        this.props.clearSearch();
+        this.props.closeModal();
+        window.scrollTo(0, 0);
     }
     render() {
         return(
+            let { recipes, currentUser, isModalOpen, openModal, saveThisRecipe, deleteThisSave } = this.props
+            // Finish adding titles and refactor
             <ul className='recipe-grid'>
                 {
                     this.props.recipes.map((recipe) => {

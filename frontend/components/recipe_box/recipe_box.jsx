@@ -12,7 +12,7 @@ class RecipeBox extends React.Component {
 
     render() {
         let { saves, recipes, currentUser, isModalOpen, openModal, saveThisRecipe, deleteThisSave } = this.props
-        {!loggedIn && !isModalOpen ? openModal('signup') : '' }
+        {!currentUser && !isModalOpen ? openModal('signup') : '' }
 
         if (Object.keys(recipes).length === 0) return (
             <div className='no-search-results'>

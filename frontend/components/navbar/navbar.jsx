@@ -92,7 +92,9 @@ class NavBar extends React.Component {
                         <div className='login-logout'>
                             <div className='login-button' onClick={currentUser ? () => {} : () => this.props.openModal('login')}>
                                 {currentUser ? 
-                                    <div className='login-recipe-box'>Your Recipe Box</div>
+                                    <Link to={`/user/${currentUser.id}/recipebox`} style={{ textDecoration: 'none'}}>
+                                        <p className={this.props.location.pathname.includes('recipebox') ? 'recipe-box-show' : 'recipe-box-text'}>Recipe Box</p>
+                                    </Link>
                                 :
                                     <div className='login-recipe-box'>
                                         <p className='login-login'>Log In</p>
