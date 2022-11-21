@@ -33,10 +33,11 @@ class RecipeBox extends React.Component {
                         </div>
                     :   
                         <div className='recipe-grid'>
+                            {/* Retool RecipeIndex and everywhere there is a recipe index */}
                             {saves.map((save, idx) => {
                                 let saveId = save.recipeId
                                 let recipe = recipes[saveId]
-                                return <RecipeIndexCard recipe={recipe} key={idx} currentUser={currentUser} openModal={openModal} />
+                                return <RecipeIndexCard recipe={recipe} key={idx} currentUser={currentUser} openModal={openModal} saveThisRecipe={saveThisRecipe} deleteThisSave={deleteThisSave} />
                             }
                             )}
                         </div>

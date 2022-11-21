@@ -3,6 +3,34 @@ import { Link } from 'react-router-dom';
 
 class RecipeIndexCard extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            className: 'modal-save-background-closed'
+        }
+        this.handleSave = this.handleSave.bind(this);
+        this.toggleModal = this.toggleModal.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleSave(recipe) { 
+        if (recipe.saveId) {
+            this.toggleModal();
+        } else {
+            this.props.saveThisRecipe(recipe.id)
+        }
+    }
+
+    toggleModal() {
+        let newClass = (this.state.className === 'modal-save-background') ? 'modal-save-background-closed' : 'modal-save-background'
+        this.setState({ className: newClass })
+    }
+
+    handleClick(recipe) {
+        this.props.deleteThisSave(recipe.saveId);
+        this.toggleModal()
+    }
+
     render() {
         let { recipe, currentUser, openModal } = this.props;
         return (
@@ -18,6 +46,16 @@ class RecipeIndexCard extends React.Component {
                             {recipe.cook_time}
                         </div>
                     </Link>
+                    <div className='recipe-card-bookmark-container' onClick={currentUser ? () => this.handleSave(recipe) : () => {}} >
+                    {currentUser ? '' :
+                        <div className='recipe-card-pop-up' >
+                            <div className='recipe-card-pop-up-spacer' />
+                            <div className='recipe-card-pop-up-text' >
+                                {/* <span onClick={() => openModal('login')}></span> */}
+                            </div>
+                        </div>
+                    }   
+                    </div>
                 </div>
             </div>
         )
