@@ -19,7 +19,7 @@ class SearchRecipes extends React.Component {
     }
 
     render() {
-        let { currentUser, openModal, recipes, searches } = this.props
+        let { currentUser, openModal, recipes, searches, saveThisRecipe, deleteThisSave } = this.props
         if (Object.values(recipes).length === 0) return (<div className="no-search-results"></div>);
 
         if (searches.length === 0) return (
@@ -38,7 +38,7 @@ class SearchRecipes extends React.Component {
                         {searches.map((search, idx) => {
                             let searchId = search.id
                             let recipe = recipes[(searchId - 1)]
-                            return <RecipeIndexCard recipe={recipe} key={idx} currentUser={currentUser} openModal={openModal} />
+                            return <RecipeIndexCard recipe={recipe} key={idx} currentUser={currentUser} openModal={openModal} saveThisRecipe={saveThisRecipe} deleteThisSave={deleteThisSave} />
                         }
                         )}
                     </div>

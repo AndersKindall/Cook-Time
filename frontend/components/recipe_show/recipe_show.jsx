@@ -5,15 +5,34 @@ import CommentsBox from './comments_box';
 
 class RecipeShow extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
+        this.handleSave = this.handleSave.bind(this);
     }
 
     componentDidMount() {
-        this.props.getRecipe(this.props.match.params.recipeId)
+        this.props.getRecipe(this.props.match.params.recipeId);
+        this.props.clearSearch();
+        window.scrollTo(0, 0);
     }
 
+    componentDidUpdate(oldProps) {
+        if (this.props.match.params.recipeId !== oldProps.match.params.recipeId) {
+            this.props.getRecipe(this.props.match.params.recipeId)
+            this.props.clearSearch();
+        }
+    }
+
+    handleSave(recipe) {
+        if (recipe.saveId) {
+            this.props.deleteThisSave(recipe.saveId)
+        } else {
+            this.props.saveThisRecipe(recipe.id)
+        }
+    }
+
+
     render() {
-        const { recipe, currentUser, comments, addComment, updateCurrComment, deleteCurrComment } = this.props;
+        let { recipe, currentUser, comments, addComment, updateCurrComment, deleteCurrComment } = this.props;
         if (!recipe || !recipe.ingredients) return null
         return (
             <div className='recipe-show-container'>

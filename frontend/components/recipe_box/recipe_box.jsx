@@ -29,7 +29,7 @@ class RecipeBox extends React.Component {
                     {saves.length === 0 ? 
                         <div className='no-search-results'>
                             <h1 className="no-search-results-header">No Saved Recipes</h1>
-                            <h1 className='no-search-results-subheader'>Add recipes to your Recipe Box</h1>
+                            <h2 className='no-search-results-subheader'>Add recipes to your Recipe Box</h2>
                         </div>
                     :   
                         <div className='recipe-grid'>

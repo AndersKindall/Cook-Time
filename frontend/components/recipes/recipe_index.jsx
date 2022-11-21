@@ -11,20 +11,20 @@ class RecipeIndex extends React.Component {
         window.scrollTo(0, 0);
     }
     render() {
+        let { recipes, currentUser, openModal, saveThisRecipe, deleteThisSave } = this.props
         return(
-            let { recipes, currentUser, isModalOpen, openModal, saveThisRecipe, deleteThisSave } = this.props
-            // Finish adding titles and refactor
-            <ul className='recipe-grid'>
-                {
-                    this.props.recipes.map((recipe) => {
-                        return (
-                        <li>
-                            <RecipeIndexCard key={recipe.id} recipe={recipe} currentUser={this.props.currentUser} openModal={this.props.openModal}/>
-                        </li>
-                        )
-                    })
-                }
-            </ul>
+                <div className='recipe-grid-outer-container' >
+                    <div className='recipe-grid-container'>
+                        <h1 className='recipe-grid-title'>All Recipes</h1>
+                        <h2 className='recipe-grid-subtitle'>{recipes.length} recipes</h2>
+                        <div className='recipe-grid'>
+                            {recipes.map((recipe, idx) => {
+                                return <RecipeIndexCard key={idx} recipe={recipe} currentUser={currentUser} openModal={openModal} saveThisRecipe={saveThisRecipe} deleteThisSave={deleteThisSave}/>                                   
+                            }
+                            )}
+                        </div>
+                    </div>
+                </div>
         )
     }
 }
