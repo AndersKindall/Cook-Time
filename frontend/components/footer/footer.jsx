@@ -3,9 +3,9 @@ import React from 'react';
 const Footer = () => {
     return (
         <div className='main-footer-container'>
-            <div className='home-footer'>
+            <div className='about-us'>
                 <h1 className='footer-title'>ABOUT US</h1>
-                <p className='home-about-text'>CookTime is a clone of NYT Cooking by the New York Times.  It was created with by Anders Kindall, a software developer and home cook based in San Francisco who carefully tested out each and every recipe on this site.</p>
+                <p className='home-about-text'>CookTime is a clone of NYT Cooking by the New York Times.  It was created by Anders Kindall, a software developer and avid home cook based in San Francisco who carefully tested out each and every recipe on this site.</p>
             </div>
             <div className='learn-more'>
                 <h1 className='footer-title'>LEARN MORE</h1>

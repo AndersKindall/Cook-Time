@@ -1,2 +1,42 @@
 @import "../base/colors.scss";
 @import "../base/fonts.scss";
+
+.main-footer-container {
+    width: 100%;
+    height: 350px;
+    background-color: $black;
+    color: $white;
+    display: flex;
+    justify-content: center;
+
+    .about-us {
+        padding: 50px 50px 30px 50px;
+
+        .home-about-text{
+            width: 600px;
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 1.5;
+            padding-top: 10px;
+            font-family: $serif;
+        }
+    
+    }
+
+    .footer-title {
+        font-family: $sans-serif-bold;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: .5px;
+    }
+
+    .learn-more {
+        padding-top: 50px;
+        padding-left: 50px;
+        width: 150px;
+
+        .home-learn-text {
+            
+        }
+    }
+}
