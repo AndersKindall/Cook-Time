@@ -19,7 +19,7 @@ const mapDispatchToProps = dispatch => ({
     deleteCurrComment: (commentId => dispatch(deleteCurrComment(commentId))), 
     openModal: (modal) => dispatch(openModal(modal)),
     saveThisRecipe: (recipeId) => dispatch(saveThisRecipe(recipeId)),
-    deleteThisSave: (recipeId) => dispatch(deleteThisSave(recipeId)),
+    deleteThisSave: (saveId) => dispatch(deleteThisSave(saveId)),
     clearSearch: () => dispatch(clearSearch())
 })
 

@@ -19,7 +19,7 @@ const mapDispatchToProps = dispatch => ({
     closeModal: () => dispatch(closeModal()),
     clearSearch: () => dispatch(clearSearch()),
     saveThisRecipe: (recipeId) => dispatch(saveThisRecipe(recipeId)),
-    deleteThisRecipe: (recipeId) => dispatch(deleteThisSave(recipeId))
+    deleteThisSave: (saveId) => dispatch(deleteThisSave(saveId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RecipeIndex)

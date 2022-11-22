@@ -19,7 +19,7 @@ const App = () => (
         <Route exact path='/recipes/:recipeId' component={RecipeShowContainer} />
         <Route exact path='/recipes' component={RecipeIndexContainer}/>
         <Route exact path='/search/:query' component={SearchRecipesContainer} />
-        <Route exact path='/user/:userId/recipebox' component={RecipeBoxContainer} />
+        <Route exact path='/users/:userId' component={RecipeBoxContainer} />
         <Route exact path='/' />
         <Redirect to='/'/>
       </Switch>

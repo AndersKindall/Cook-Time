@@ -21,7 +21,7 @@ const mapDispatchToProps = dispatch => ({
     searchPage: (query) => dispatch(searchPage(query)),
     clearSearchPage: () => dispatch(clearSearchPage()),
     saveThisRecipe: (recipeId) => dispatch(saveThisRecipe(recipeId)),
-    deleteThisRecipe: (recipeId) => dispatch(deleteThisSave(recipeId))
+    deleteThisSave: (saveId) => dispatch(deleteThisSave(saveId))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchRecipes);

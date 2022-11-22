@@ -1,6 +1,6 @@
 json.user do
     json.set! @user.id do 
-        json.partial! "/api/users/user", user: @user
+        json.partial! "/api/users/:userId", user: @user
     end
 end
 

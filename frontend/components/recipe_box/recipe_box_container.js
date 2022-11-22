@@ -14,7 +14,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     saveThisRecipe: (recipeId) => dispatch(saveThisRecipe(recipeId)),
-    deleteThisSave: (recipeId) => dispatch(deleteThisSave(recipeId)),
+    deleteThisSave: (saveId) => dispatch(deleteThisSave(saveId)),
     getThisUser: (userId) => dispatch(getThisUser(userId)),
     openModal: (modal) => dispatch(openModal(modal)),
     getAllRecipes: () => dispatch(getAllRecipes()),
