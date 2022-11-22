@@ -10,8 +10,8 @@ class IngredientList extends React.Component {
                 <h1 className='ingredients-title'>INGREDIENTS</h1>
                 <ul className='ingredients-list'>
                     {
-                        ingredients.map((ingredient) => {
-                            return (<li className='ingredients-list-item'>
+                        ingredients.map((ingredient, idx) => {
+                            return (<li className='ingredients-list-item' key={idx}>
                                         <span className='ingredients-amount'>{ingredient.amount}   </span>
                                         <span className='ingredients-name'>{ingredient.ingredient_name}</span>
                                     </li>)
