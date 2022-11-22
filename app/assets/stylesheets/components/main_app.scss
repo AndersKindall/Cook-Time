@@ -1,0 +1,17 @@
+@import "../base/colors.scss";
+@import "../base/fonts.scss";
+
+.app {
+   display: flex;
+   flex-direction: column;
+}
+ 
+.content {
+margin-top: 65px;
+background-color: $main-light-gray;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+}

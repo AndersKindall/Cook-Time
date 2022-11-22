@@ -18,11 +18,5 @@
  
  @import 'base/colors.scss';
  @import 'base/fonts.scss';
+ @import 'components/*';
 
- .app {
-   display: flex;
- }
-
- .content {
-   margin-top: 70px;
- }

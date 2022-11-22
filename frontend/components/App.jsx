@@ -10,6 +10,7 @@ import RecipeShowContainer from "./recipe_show/recipe_show_container";
 import SearchRecipesContainer from "./search_recipes/search_recipes_container";
 import RecipeBoxContainer from "./recipe_box/recipe_box_container";
 import HomePageContainer from "./home_page/home_page_container";
+import Footer from "./footer/footer";
 
 const App = () => (
   <div className="app">
@@ -25,6 +26,7 @@ const App = () => (
         <Redirect to='/'/>
       </Switch>
     </div>
+    <Footer />
   </div>
 );
 
