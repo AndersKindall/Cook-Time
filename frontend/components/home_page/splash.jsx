@@ -7,7 +7,6 @@ class Splash extends React.Component {
 
     render() {
         let {recipe} = this.props
-
         return (
             <div className="splash-container" >
                 <img className="splash-photo" src={recipe.photoUrl} alt="" />

@@ -4,14 +4,14 @@ import { getAllRecipes, getRecipe, clearSearch } from "../../actions/recipe_acti
 import { saveThisRecipe, deleteThisSave } from "../../actions/save_actions";
 import { openModal, closeModal } from "../../actions/modal_actions";
 import { selectSplash, selectSuggestions, selectLovedRecipes } from "../../reducers/selector";
-import modal from "../modal/modal";
+
 
 const mapStateToProps = state => {
     return {
+        recipes: Object.values(state.entities.recipes),
         currentUser: window.currentUser,
-        splashRecipe: selectSplash(state),
-        suggestedRecipes: selectSuggestions(state),
-        lovedRecipes: selectLovedRecipes(state)
+        suggestions: selectSuggestions(state),
+        loves: selectLovedRecipes(state)
     }
 }
 
@@ -25,4 +25,4 @@ const mapDispatchToProps = dispatch => ({
     closeModal: () => dispatch(closeModal())
 })
 
-export default connect(mapDispatchToProps, mapStateToProps)(HomePage);
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
