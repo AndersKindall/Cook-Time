@@ -11,13 +11,13 @@ const Footer = () => {
                 <h1 className='footer-title'>LEARN MORE</h1>
                 <ul className='home-learn-text'>
                     <a target='_blank' href='https://cooking.nytimes.com/' className='footer-links'>NYT Cooking Website</a>
-                    <a target='_blank' href='https://github.com/AndersKindall/Cook-Time' className='footer-links'>
+                    <a target='_blank' href='https://github.com/AndersKindall/Cook-Time' className='footer-links icons'>
                         <i class="fa-brands fa-github"/>
                     </a>
-                    <a target='_blank' href='https://www.linkedin.com/in/anders-kindall-175422216/' className='footer-links'>
+                    <a target='_blank' href='https://www.linkedin.com/in/anders-kindall-175422216/' className='footer-links icons'>
                         <i class="fa-brands fa-linkedin"/>
                     </a>
-                    <a target='_blank' href='https://angel.co/u/anders-kindall' className='footer-links'>
+                    <a target='_blank' href='https://angel.co/u/anders-kindall' className='footer-links icons'>
                         <i class="fa-brands fa-angellist"/>
                     </a>
                 </ul>

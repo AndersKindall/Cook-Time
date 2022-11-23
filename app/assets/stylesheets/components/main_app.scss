@@ -4,14 +4,17 @@
 .app {
    display: flex;
    flex-direction: column;
+   width: 100%;
+   height: auto;
 }
  
 .content {
-margin-top: 65px;
-background-color: $main-light-gray;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-overflow: hidden;
+    margin-top: 65px;
+    background-color: $main-light-gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
+
