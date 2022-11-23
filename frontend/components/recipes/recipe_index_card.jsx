@@ -46,8 +46,7 @@ class RecipeIndexCard extends React.Component {
                             {recipe.cook_time}
                         </div>
                     </Link>
-                    <div className='recipe-card-bookmark-container'>
-                    {/* <FontAwesomeIcon icon="fal fa-bookmark" onClick={currentUser ? (recipe) => this.handleSave(recipe) : () => {} }/>                         */}
+                    <div className='recipe-card-bookmark-container'>                        
                     <i className="fa-solid fa-bookmark" onClick={currentUser ? this.handleSave(recipe) : () => {} }></i>
                     {/* Refactor modal */}
                     {/* {currentUser ? '' :
