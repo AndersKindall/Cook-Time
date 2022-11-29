@@ -10,3 +10,27 @@
     width: 100%;
     height: auto;
 }
+
+.home-page-main-body {
+    width: 1000px;
+}
+
+.home-page-header {
+    padding: 40px;
+
+    .home-page-title {
+        font-size: 31px;
+        font-weight: 700;
+        padding: 8px;
+        font-family: $karnak;
+        text-align: center;
+    }
+
+    .home-page-subtitle {
+        text-transform: uppercase;
+        font-family: $serif;
+        font-size: 12px;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+}

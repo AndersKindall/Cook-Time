@@ -29,7 +29,7 @@ class HomePage extends React.Component {
                 <div className="home-page-main-body" >
                     <div className="home-page-header">
                         <h1 className="home-page-title">What to Cook This Week</h1>
-                        <h2 className="home-page-subtitle">Recipes, guides and more</h2>
+                        <h2 className="home-page-subtitle">Recipes, guides and more for this week</h2>
                     </div>
                     <Link to={`/recipes/`} style={{ textDecoration: 'none'}}>
                         <div className="see-all-link-wrapper">

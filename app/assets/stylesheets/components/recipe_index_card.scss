@@ -103,9 +103,42 @@
     cursor: pointer;
 }
 
-// .fa-solid, .fa-bookmark {
+.recipe-card-bookmark:before,
+.recipe-card-bookmark:after {
+    content: '';
+    position: absolute;
+    right: -2px;
+    bottom: -1px;
+    border-bottom: 7.5px solid #b3b3b3;
+    border-right: 7.5px solid transparent;
+    border-left: 7.5px solid transparent;
+    width: 0;
+    height: 0;
+}
+
+.recipe-card-bookmark:before {
+    bottom: -3px;
+    border-bottom: 7.5px solid $white;
+    z-index: 1;
+}
+
+.recipe-card-bookmark {
+    position: absolute;
+    width: 15px;
+    height: 20px;
+    border: 2px solid #b3b3b3;
+    background-color: $white;
+    box-sizing: border-box;
+    right: 11px;
+    bottom: 15px;
+
+    &:hover {
+        background-color: #b3b3b3;
+    }
     
-// }
+}
+
+//  
 
 
 // .recipe-card-show-link {
