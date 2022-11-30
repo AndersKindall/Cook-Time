@@ -68,11 +68,9 @@ class NavBar extends React.Component {
                     </div>
                     <div className='nav-bar-search'>
                         <i className="fas fa-search search-icon"></i>
-                        <div className="search-bar-container">
-                            <form className='search-bar' onSubmit={this.handleSubmit}>
-                                <input onClick={this.showDropdown} onChange={this.handleChange} value={this.state.inputValue} type='text' className='search-input' placeholder='What would you like to cook?' />
-                            </form>
-                        </div>
+                        <form className='search-bar' onSubmit={this.handleSubmit}>
+                            <input onClick={this.showDropdown} onChange={this.handleChange} value={this.state.inputValue} type='text' className='search-input' placeholder='What would you like to cook?' />
+                        </form>
                         <i onClick={this.hideDropdown} className={this.state.show ? "fas fa-times-circle" : ''}></i>
                         {!searches ?
                             '' :
@@ -80,7 +78,9 @@ class NavBar extends React.Component {
                                 {Object.values(searches).map((recipe, idx) => (
                                     <Link key={idx} to={`/recipes/${recipe.id}`} className='search-results-wrapper' style={{textDecoration: 'none'}}>
                                         <li className='search-results-child'>
-                                            {recipe.title}
+                                            {/* resize photo */}
+                                            {/* <img className='dropdown-photo' src={recipe.photoUrl}/> */}
+                                            {recipe.dish_name}
                                         </li>
                                     </Link>
                                 )
@@ -89,20 +89,27 @@ class NavBar extends React.Component {
                         }
                     </div>
                     <div className='navbar-end'>
-                        <div className='login-logout'>
-                            <div className='login-button' onClick={currentUser ? () => {} : () => this.props.openModal('login')}>
+                            <div className='login-recipe-box' onClick={currentUser ? () => {} : () => this.props.openModal('login')}>
+                                <div className='login-logout-spacer'/>
                                 {currentUser ? 
-                                    <Link to={`/users/${currentUser.id}`} style={{ textDecoration: 'none'}}>
-                                        <p className={this.props.location.pathname.includes('recipebox') ? 'recipe-box-show' : 'recipe-box-text'}>Recipe Box</p>
+                                    <Link to={`/users/${currentUser.id}/recipebox`} style={{ textDecoration: 'none'}}>
+                                        <p className={this.props.location.pathname.includes('recipebox') ? 'recipe-box-show' : 'recipe-box-text'}>Your Recipe Box</p>
                                     </Link>
                                 :
-                                    <div className='login-recipe-box'>
-                                        <p className='login-login'>Log In</p>
+                                    <div className='login-recipe-box-container'>
+                                        <p className='recipe-box-text'>Recipe Box</p>
+                                        <p className='recipe-box-login'>Log In</p>
                                     </div>
                                 }
                             </div>
-                        </div>
-                        <i className="fa-solid fa-gear gear-icon" onClick={currentUser ? () => logout() : () => {}}></i>
+                            <div className='nav-bar-dropdown'>
+                                <i className="fa-solid fa-gear gear-icon"></i>
+                                <div className='nav-bar-dropdown-spacer' />
+                                {currentUser ? 
+                                    <button className='nav-bar-dropdown-show' onClick={logout}>Log Out</button> :
+                                    <button className='nav-bar-dropdown-show' onClick={() => this.props.openModal('login')}>Log In</button>
+                                }
+                            </div>
                     </div>
                 </nav>
         </header>  
