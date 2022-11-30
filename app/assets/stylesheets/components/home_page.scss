@@ -4,6 +4,12 @@
 .main-app {
     width: 100%;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
 }
 
 .splash-outer-container {
@@ -15,6 +21,7 @@
     width: 1000px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .home-page-header {
@@ -35,6 +42,22 @@
         text-align: center;
         letter-spacing: 1px;
     }
+
+    .see-all-link  {
+        text-transform: uppercase;
+        font-family: $serif;
+        font-size: 12px;
+        text-align: center;
+        letter-spacing: 1px;
+        cursor: pointer;
+    }
+
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+        text-decoration: none;
+    }
 }
 
 .recipe-card-header {
@@ -50,6 +73,7 @@
         color: $black;
         padding-top: 10px;
         border-top: 7px solid $black;
+        text-decoration: underline;
     }
 
     .recipe-card-header-subtitle {

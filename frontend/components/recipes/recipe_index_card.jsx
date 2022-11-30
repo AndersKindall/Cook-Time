@@ -42,12 +42,13 @@ class RecipeIndexCard extends React.Component {
                             <p className='recipe-card-dishname' >{recipe.dish_name}</p>
                             <p className='recipe-card-author' >{recipe.author}</p>
                         </div>
-                        <div className="recipe-card-footer">
-                            {recipe.cook_time}
-                        </div>
                     </Link>
+                    <div className="recipe-card-footer">
+                        {recipe.cook_time}
+                        {/* Retool for hover */}
+                        <i className={recipe.saveId ? "fas fa-bookmark" : "far fa-bookmark"} onClick={currentUser ? () => this.handleSave(recipe) : () => {} }></i>
+                    </div>
                     <div className='recipe-card-bookmark-container'>                        
-                    <i className="fa-solid fa-bookmark" onClick={currentUser ? this.handleSave(recipe) : () => {} }></i>
                     {/* Refactor modal */}
                     {/* {currentUser ? '' :
                         <div className='recipe-card-popup' >
