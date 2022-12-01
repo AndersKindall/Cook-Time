@@ -8,8 +8,7 @@
     background-color: $main-light-gray;
 
     .recipe-grid-container {
-        max-width: 1030px;
-        width: calc(100% - 2em);
+        max-width: calc(100% - 40px);
         display: flex;
         flex-direction: column;
 
@@ -17,7 +16,7 @@
             font-family: $sans-serif-bold;
             font-size: 24px;
             color: $darker-gray;
-            padding-top: 40px;
+
         }
 
         .recipe-grid-subtitle {
