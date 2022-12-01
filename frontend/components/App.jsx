@@ -14,8 +14,8 @@ import Footer from "./footer/footer";
 
 const App = () => (
   <div className="app">
-    <NavBarContainer />
     <Modal />
+    <NavBarContainer />
     <div className="content">
       <Switch>
         <Route exact path='/recipes/:recipeId' component={RecipeShowContainer} />

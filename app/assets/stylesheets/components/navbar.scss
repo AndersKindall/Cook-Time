@@ -202,14 +202,6 @@
         color: $btn-red;
     }
 
-    // .nav-bar-dropdown-spacer {
-    //     position: absolute;
-    //     width: 200px;
-    //     background-color: transparent;
-    //     height: 20px;
-    //     top: 55px;
-    // }
-
     .nav-bar-dropdown-show {
         display: block;
         position: absolute;
@@ -225,7 +217,7 @@
         box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.05);
         z-index: 100;
         cursor: pointer;
-        
+    
     }
 }
 

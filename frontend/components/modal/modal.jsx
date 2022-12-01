@@ -19,18 +19,37 @@ function Modal({modal, closeModal}) {
     default:
       return null;
   }
-  return (
-    <div className="modal-background" onClick={closeModal}>
-      <div className="modal-child" onClick={e => e.stopPropagation()}>
-        { component }
+  return (      
+      <div>
+        { (location === '#/') ?
+        <div className="modal-background" onClick={closeModal}>
+          <div className="modal-child" onClick={(e) => e.stopPropagation()}>
+            <div className='modal-image-tag'>
+                <img className='modal-image' src={window.modalImg} alt='chocolate souffle' />
+                <p className='modal-image-text'>Unlock CookTime recipes and your <br />personal recipe box with a free account.</p>
+            </div>
+            { component }
+          </div>
+        </div>
+        :
+        <div className="modal-background" onClick={closeModal}>
+          <div className="modal-child">
+            <div className='modal-image-tag'>
+                <img className='modal-image' src={window.modalImg} alt='chocolate souffle' />
+                <p className='modal-image-text'>Unlock CookTime recipes and your <br />personal recipe box with a free account.</p>
+            </div>
+            { component }
+          </div>
+        </div>
+        }
       </div>
-    </div>
   );
 }
 
 const mapStateToProps = state => {
   return {
-    modal: state.ui.modal
+    modal: state.ui.modal,
+    location: window.location.hash
   };
 };
 
