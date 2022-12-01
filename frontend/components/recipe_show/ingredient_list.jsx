@@ -3,11 +3,14 @@ import React from 'react';
 class IngredientList extends React.Component {
     
     render() {
-        let { ingredients } = this.props;
-
+        let { ingredients, recipe } = this.props;
         return (
             <div className='ingredients-box'>
                 <h1 className='ingredients-title'>INGREDIENTS</h1>
+                <div className='recipe-yield-box'>
+                    <span className='recipe-yield-bolded'>Yield: </span>
+                    <span className='recipe-yield'>{recipe.yield}</span>
+                </div>
                 <ul className='ingredients-list'>
                     {
                         ingredients.map((ingredient, idx) => {

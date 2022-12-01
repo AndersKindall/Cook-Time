@@ -1,32 +1,193 @@
 @import '../base/colors.scss';
 @import '../base/fonts.scss';
 
-.comments-head {
-    font-family: 'Alfa Slab One', cursive;
-    font-weight: 700;
-    letter-spacing: .05rem;
-    font-size: 12px;
+.comments-outer-box {
+    display: flex;
+    flex-direction: column;
+    border-top: 5px solid $black;
 
 }
 
- .comments-form-buttons {
-     display: flex;
-     font-family: Arial, Helvetica, sans-serif;
- }
+.comments-head {
+    padding-top: 1px;
+    padding-bottom: 20px;
+    font-family: $karnak;
+    font-weight: 700;
+    letter-spacing: .15em;
+    font-size: 16px;
+    line-height: 1.45;
+    text-transform: uppercase;
+}
 
- .comments-input {
-     font-family: Arial, Helvetica, sans-serif;
- }
- .comments-container-head-title {
-     font-family: Arial, Helvetica, sans-serif;
-     font-size: 12px;
- }
+.comments-form-header {
+    font-family: $sans-serif-bold;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: .02em;
+    line-height: 1.45;
+    padding-top: 10px;
+}
 
- .comments-container {
-     font-family: Arial, Helvetica, sans-serif;
-     font-size: 12px;
- }
+.comments-input {
+    font-family: $sans-serif;
+    font-size: 16px;
+    width: 600px;
+    height: 160px;
+    border-radius: 2px;
+}
 
- .comments-form-buttons {
-    text-align: right;
- }
+.comments-form-buttons {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    font-family: $sans-serif-bold;
+    font-size: 16px;
+    font-weight: 500px;
+    color: $gray;
+    justify-content: flex-end;
+    cursor: pointer;
+
+.comments-form-cancel-button {
+    padding-top: 10px;
+    text-decoration: underline;
+    margin-right: 10px;
+
+    &:hover {
+        color: $lighter-gray;
+    }
+}
+
+.comments-add-note,
+.comments-add-note-null {
+    padding: 10px;
+    border: 1px solid $light-gray;
+    border-radius: 20px;
+
+    &:hover {
+        background-color: $lighter-gray;
+    }
+}
+}
+
+.comments-container-head {
+    font-family: $sans-serif-bold;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: .02em;
+    line-height: 1.45;
+    padding-top: 10px;
+    border-bottom: 1px solid $lighter-gray;
+
+    .comments-container-comments-number {
+        font-family: $sans-serif;
+        font-weight: 300;
+    }
+}
+
+.comments-container-empty {
+    font-family: $sans-serif-bold;
+    font-size: 16px;
+    font-weight: 500px;
+    color: $darker-gray;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.comments-container-comments {
+    display: flex;
+    flex-direction: column;
+}
+
+.comments-article-outer-container {
+    display: flex;
+    flex-direction: row; 
+    border-bottom: 1px solid $lighter-gray;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.comments-article-author-container {
+    padding-right: 60px;
+
+    .comments-article-author {
+        font-family: $sans-serif-bold;
+        font-weight: 700;
+        font-size: 16px;
+        letter-spacing: .02em;
+        line-height: 1.45;
+    }
+
+    .comments-article-date {
+        font-family: $sans-serif;
+        font-weight: 300;
+        font-size: 12px;
+        padding-top: 5px;
+        color: $light-gray;
+    }
+}
+
+.comments-article-comment-content {
+    font-size: 17px;
+    font-family: $sans-serif;
+    font-weight: 500;
+    letter-spacing: .02em;
+    line-height: 1.45;
+}
+
+.update-comment-form {
+    width: 449.43px;
+
+    .update-comment-input {
+        width: 100%;
+        font-family: $sans-serif;
+        font-size: 16px;
+        height: 160px;
+        border-radius: 2px;
+    }
+}
+
+.update-comment-form-buttons {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    font-family: $sans-serif-bold;
+    font-size: 16px;
+    font-weight: 500px;
+    color: $gray;
+    justify-content: flex-end;
+    cursor: pointer;
+
+    .update-comment-cancel {
+        padding-top: 10px;
+        text-decoration: underline;
+        margin-right: 10px;
+    
+        &:hover {
+            color: $lighter-gray;
+        }
+    }
+
+    .comments-edit-note,
+    .comments-edit-note-null {
+        padding: 10px;
+        border: 1px solid $light-gray;
+        border-radius: 20px;
+
+        &:hover {
+            background-color: $lighter-gray;
+        }
+    }
+
+    .delete-note {
+        padding-top: 10px;
+        text-decoration: underline;
+        margin-right: 10px;
+    
+        &:hover {
+            color: $lighter-gray;
+        }
+    }
+}
+
+
+

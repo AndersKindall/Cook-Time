@@ -1,26 +1,43 @@
+@import '../base/colors.scss';
+@import '../base/fonts.scss';
+
 .steps-box {
-    margin: 10px;
+    border-top: 5px solid $black;
 }
+
 .steps-title {
-    font-family: 'Alfa Slab One', cursive;
-    font-weight: 600;
-    letter-spacing: .05rem;
-    font-size: 12px;
+    padding-top: 1px;
+    padding-bottom: 20px;
+    font-family: $karnak;
+    font-weight: 700;
+    letter-spacing: .15em;
+    font-size: 16px;
+    line-height: 1.45;
 }
+
 .steps-list {
     font-size: 13px;
     line-height: 1.45em;
     font-weight: 400;
 }
+
 .steps-list-item {
     margin-bottom: 30px;
 }
 
 .step-number {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
+    font-family: $sans-serif-bold;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: .02em;
+    line-height: 1.45;
+    padding-top: 10px;
 }
 
 .step-content {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: $serif;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: .01em;
+    line-height: 1.4; 
 }

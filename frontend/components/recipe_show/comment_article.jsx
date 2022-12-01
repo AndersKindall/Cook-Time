@@ -31,34 +31,36 @@ class CommentArticle extends React.Component {
         let {comment, deleteCurrComment, currentUser} = this.props;
         return (
             <div className='comments-article-outer-container'>
-                {currentUser && currentUser.id === comment.user_id ?
-                    <div>
-                        <i className="fa-solid fa-trash-can delete-comment-btn" onClick={() => deleteCurrComment(comment.id)}></i>
-                        <i className="fa-solid fa-pen-nib edit-comment-button" onClick={this.edit}></i>
-                    </div>
-                    : ''
-                }
-                <div className='comments-article-comment-container'>
+                <div className='comments-article-author-container'>
                     <div className='comments-article-author' >{comment.author}</div>
                     <div className='comments-article-date' >{comment.datestamp} ago</div>
                 </div>
-                {this.state.editing
-                ?
-                    <form className='update-comment-form' onSubmit={this.handleSubmit} >
-                        <textarea className='update-comment-input'
-                            type='text'
-                            value={this.state.commentContent}
-                            onChange={this.handleChange}
-                        ></textarea>
-                        <div className='update-comment-form-buttons' >
-                            <div className='update-comment-cancel' onClick={this.edit} >Cancel</div>
-                            <div className={this.state.commentContent.length >= 5 ? 'comments-add-note' : 'comments-add-note-null'}
-                                onClick={this.state.commentContent.length >= 5 ? this.handleSubmit : () => {}} >Edit Note</div>
+                <div className='comments-article-content-container'>
+                    {this.state.editing
+                    ?
+                        <form className='update-comment-form' onSubmit={this.handleSubmit} >
+                            <textarea className='update-comment-input'
+                                type='text'
+                                value={this.state.commentContent}
+                                onChange={this.handleChange}
+                            ></textarea>
+                            <div className='update-comment-form-buttons' >
+                                <div className='update-comment-cancel' onClick={this.edit} >Cancel</div>
+                                <div className={this.state.commentContent.length >= 5 ? 'comments-edit-note' : 'comments-edit-note-null'}
+                                    onClick={this.state.commentContent.length >= 5 ? this.handleSubmit : () => {}} >Edit Note</div>
+                            </div>
+                        </form>
+                    :
+                        <div className='comments-article-comment-content' >{comment.content}</div>
+                    }
+                    {(currentUser && currentUser.id === comment.user_id) && (!this.state.editing) ?
+                        <div className='update-comment-form-buttons'>
+                            <div className="delete-note" onClick={() => deleteCurrComment(comment.id)}>Delete Note</div>
+                            <div className="comments-edit-note" onClick={this.edit}>Edit Note</div>
                         </div>
-                    </form>
-                :
-                    <div className='comments-article-comment-content' >{comment.content}</div>
-                }
+                        : ''
+                    }
+                </div>
             </div>
         )
     }

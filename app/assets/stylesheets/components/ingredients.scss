@@ -1,38 +1,50 @@
+@import '../base/colors.scss';
+@import '../base/fonts.scss';
+
 .ingredients-box {
-    margin: 10px;
+    border-top: 5px solid $black;
+}
+
+.ingredients-title {
+    padding-top: 1px;
+    padding-bottom: 20px;
+    font-family: $karnak;
+    font-weight: 700;
+    letter-spacing: .15em;
+    font-size: 16px;
+    line-height: 1.45;
+}
+
+.recipe-yield-box {
+    font-family: $sans-serif-bold;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: .02em;
+    line-height: 1.45;
+    padding-top: 10px;
 }
 
 .ingredients-list-item {
     display: flex;
-}
-
-.ingredients-title {
-    font-family: 'Alfa Slab One', cursive;
-    font-weight: 600;
-    letter-spacing: .05rem;
-    font-size: 12px;
+    font-size: 17px;
+    font-family: $sans-serif;
+    font-weight: 500;
+    letter-spacing: .02em;
+    line-height: 1.45;
+    padding-bottom: 10px;
 }
 
 .ingredients-amount {
-    min-width: 50px;
+    min-width: 45px;
     display: inline-block;
-    font-size: 12px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 700;
-    line-height: 18.6px;
     vertical-align: top;
-    padding-left:  5px;
+    padding-right: 10px;
     text-align: right;
     box-sizing: content-box;
 }
 
 .ingredients-name {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 700;
-    font-size: 12px;
     text-align: left;
-    line-height: 18.6px;
     vertical-align: top;
     padding-left:  5px;
-    width: 70%
 }
