@@ -32,3 +32,5 @@ bundle.js.map
 .byebug_history
 .DS_store
 npm-debug.log
+
+/public
