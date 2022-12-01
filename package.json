@@ -1,5 +1,5 @@
 {
-  "name": "Cook-Time",
+  "name": "cook-time",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.17.10",
@@ -19,18 +19,29 @@
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
-  "main": "webpack.config.js",
   "directories": {
     "lib": "lib",
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm install --prefix frontend && npm run build --prefix frontend",
     "start": "webpack",
     "postinstall": "webpack",
     "webpack": "webpack --watch --mode=development"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndersKindall/Cook-Time.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AndersKindall/Cook-Time/issues"
+  },
+  "homepage": "https://github.com/AndersKindall/Cook-Time#readme",
+  "engines": {
+    "node": "16.15.0"
+  }
 }
