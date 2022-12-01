@@ -116,6 +116,69 @@
     }
 }
 
+.outer-bookmark { 
+    position: relative;
+    align-items: flex-start;
+
+    .recipe-page-btn {
+        position: absolute;
+        display: flex;
+        left: 0;
+        top: 5px;
+        height: 40px;
+        background-color: $btn-red;
+        color: $white;
+        font-family: $sans-serif;
+        font-size: 14px;
+        letter-spacing: .5px;
+        padding: 8px 15px 10px;
+        border-radius: 20px;
+        opacity: 1;
+
+        .splash-outer-bookmark {
+            padding-right: 7px;
+            position: relative;
+
+            .splash-bookmark {
+                width: 9px;
+                height: 14px;
+                border: 2px solid $white;
+                background-color: transparent;
+            }
+
+            .bookmark-recipe-saved {
+                background-color: $white;
+            }
+
+            .splash-bookmark:before,
+            .splash-bookmark:after {
+                content: '';
+                position: absolute;
+                bottom: 1.8px;
+                border-bottom: 4.5px solid $white;
+                border-right: 4.5px solid transparent;
+                border-left: 4.5px solid transparent;
+                width: 0;
+                height: 0;
+            }
+
+            .splash-bookmark:before {
+                bottom: -1.2px;
+                border-bottom: 4.5px solid $btn-red;
+                z-index: 9;
+            }
+        }
+    }
+}
+
+.save-recipe-btn:hover {
+    background-color: $darker-red;
+
+    .bookmark-outer-recipe .splash-bookmark:before {
+        border-bottom: 4px solid $darker-red;
+    }
+}
+
 
 
 
