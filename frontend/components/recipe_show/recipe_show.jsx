@@ -23,8 +23,8 @@ class RecipeShow extends React.Component {
     }
 
     handleSave(recipe) {
-        if (recipe.saveId) {
-            this.props.deleteThisSave(recipe.saveId)
+        if (recipe.save_id) {
+            this.props.deleteThisSave(recipe.save_id)
         } else {
             this.props.saveThisRecipe(recipe.id)
         }
@@ -56,9 +56,9 @@ class RecipeShow extends React.Component {
                             <div className='outer-bookmark'>
                                 <button className='save-recipe-btn recipe-page-btn' onClick={() => this.handleSave(recipe)} >
                                     <div className='splash-outer-bookmark bookmark-outer-recipe'>
-                                        <div className={recipe.saveId ? 'splash-bookmark bookmark-recipe bookmark-recipe-saved' : 'splash-bookmark bookmark-recipe'} />
+                                        <div className={recipe.save_id ? 'splash-bookmark bookmark-recipe bookmark-recipe-saved' : 'splash-bookmark bookmark-recipe'} />
                                     </div>
-                                    <p className='splash-bookmark-text'>{recipe.saveId ? 'Saved' : 'Save'}</p>
+                                    <p className='splash-bookmark-text'>{recipe.save_id ? 'Saved' : 'Save'}</p>
                                 </button>
                             </div>
                         </div>

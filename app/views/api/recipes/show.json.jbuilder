@@ -38,8 +38,10 @@ json.saves do
     if current_user
         @recipe.saves.each do |save|
             if save.user_id === current_user.id
-                json.set! save.recipe_id do
+                json.set! save.id do
                     json.extract! save, :id, :recipe_id, :user_id
+                    json.recipeId save.recipe_id
+                    json.userId save.user_id
                 end
             end
         end

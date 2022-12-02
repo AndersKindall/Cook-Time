@@ -2,7 +2,9 @@ import React from "react";
 import RecipeIndexCard from "../recipes/recipe_index_card";
 
 class RecipeBox extends React.Component {
-    
+    constructor(props) {
+        super(props);
+    }
     componentDidMount() {
         this.props.getAllRecipes();
         this.props.getThisUser(parseInt(this.props.match.params.userId));
@@ -11,9 +13,8 @@ class RecipeBox extends React.Component {
     }
 
     render() {
-        let { saves, recipes, currentUser, isModalOpen, openModal, saveThisRecipe, deleteThisSave } = this.props
+        let { saves, recipes, currentUser, isModalOpen, openModal, saveThisRecipe, deleteThisSave } = this.props;
         {!currentUser && !isModalOpen ? openModal('signup') : '' }
-
         if (Object.keys(recipes).length === 0) return (
             <div className='no-search-results'>
                 <h1 className="no-search-results-header">No Saved Recipes</h1>

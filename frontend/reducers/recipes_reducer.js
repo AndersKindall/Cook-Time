@@ -5,7 +5,6 @@ import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 const recipesReducer = (state={}, action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state);
-    
     switch(action.type) {
         case RECEIVE_ALL_RECIPES:
             return action.recipes;
@@ -19,15 +18,15 @@ const recipesReducer = (state={}, action) => {
         case RECEIVE_CURRENT_USER:
             if (action.user.saves) {
                 Object.values(action.user.saves).map(save => {
-                    newState[save.recipeId].saveId = save.id;
+                    newState[save.recipe.id].save_id = save.id;
                 })
             }
             return newState;
-        case RECEIVE_SAVE:
-            newState[action.save.recipeId].saveId = action.save.id;
-            return newState;
+        case RECEIVE_SAVE: 
+            newState[action.save_id] = action.save;
+            return newState
         case DELETE_ONE_SAVE:
-            delete newState[action.save.recipeId].saveId;
+            delete newState[action.save_id]
             return newState;
         default:
             return state;

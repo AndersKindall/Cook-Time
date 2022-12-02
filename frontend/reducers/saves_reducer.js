@@ -11,7 +11,7 @@ const savesReducer = (state={}, action) => {
             newState[action.save.id] = action.save;
             return newState;
         case DELETE_ONE_SAVE:
-            delete newState[action.save.id];
+            delete newState[action.save_id];
             return newState;
         case RECEIVE_CURRENT_USER:
             return Object.assign({}, action.user.saves);

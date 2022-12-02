@@ -18,7 +18,7 @@ export const saveThisRecipe = (recipeId) => dispatch => (
         .then(save => dispatch(receiveSave(save)))
 )
 
-export const deleteThisSave = (saveId) => dispatch => (
-    SavesAPIUtil.deleteSave(saveId)
+export const deleteThisSave = (save_id) => dispatch => (
+    SavesAPIUtil.deleteSave(save_id)
         .then(save => dispatch(deleteOneSave(save)))
 )

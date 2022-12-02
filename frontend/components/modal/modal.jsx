@@ -21,8 +21,8 @@ function Modal({modal, closeModal}) {
   }
   return (      
       <div>
-        { (location === '#/') ?
-        <div className="modal-background" onClick={closeModal}>
+        { (location === '/') ?
+        <div className="modal-background" >
           <div className="modal-child" onClick={(e) => e.stopPropagation()}>
             <div className='modal-image-tag'>
                 <img className='modal-image' src={window.modalImg} alt='chocolate souffle' />
@@ -32,7 +32,7 @@ function Modal({modal, closeModal}) {
           </div>
         </div>
         :
-        <div className="modal-background" onClick={closeModal}>
+        <div className="modal-background" >
           <div className="modal-child">
             <div className='modal-image-tag'>
                 <img className='modal-image' src={window.modalImg} alt='chocolate souffle' />
