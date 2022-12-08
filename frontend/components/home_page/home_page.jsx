@@ -16,7 +16,7 @@ class HomePage extends React.Component {
     }
 
     render() {
-        let { currentUser, recipes, suggestions, loves, openModal, saveThisRecipe, deleteThisSave } = this.props
+        let { currentUser, recipes, suggestions, loves, openModal } = this.props
         
         if (recipes.length === 0) return null;
         return (
@@ -43,7 +43,7 @@ class HomePage extends React.Component {
                         </div>
                         <div className="recipe-card-container">
                             <ul className="recipe-card">
-                                {suggestions.map((recipe, idx) => <RecipeIndexCard recipe={recipe} key={idx} openModal={openModal} currentUser={currentUser} saveThisRecipe={saveThisRecipe} deleteThisSave={deleteThisSave}/> )}
+                                {suggestions.map((recipe, idx) => <RecipeIndexCard recipe={recipe} key={idx} openModal={openModal} currentUser={currentUser} /> )}
                             </ul>
                         </div>
                     </div>
@@ -54,7 +54,7 @@ class HomePage extends React.Component {
                         </div>
                         <div className="recipe-card-container">
                             <ul className="recipe-card">
-                                {loves.map((recipe, idx) => <RecipeIndexCard recipe={recipe} key={idx} openModal={openModal} currentUser={currentUser} saveThisRecipe={saveThisRecipe} deleteThisSave={deleteThisSave}/> )}
+                                {loves.map((recipe, idx) => <RecipeIndexCard recipe={recipe} key={idx} openModal={openModal} currentUser={currentUser} /> )}
                             </ul>
                         </div>
                     </div>

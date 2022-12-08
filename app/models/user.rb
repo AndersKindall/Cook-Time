@@ -21,13 +21,8 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
 
     has_many :comments
-    has_many :saves,
-        class_name: :Save,
-        foreign_key: :user_id,
-        dependent: :destroy
-    has_many :saved_recipes,
-        through: :saves,
-        source: :recipe
+    has_many :ratings
+    
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)

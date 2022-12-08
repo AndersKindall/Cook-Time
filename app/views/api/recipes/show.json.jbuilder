@@ -15,10 +15,12 @@ json.recipe do
             end
         end
     end
-    if current_user 
-        @recipe.saves.each do |save|
-            if save.user_id === current_user.id
-                json.save_id save.id
+end
+json.ratings do
+    if @recipe.ratings  
+        @recipe.ratings.each do |rating|
+            json.set! rating.id do 
+                json.extract! rating, :id, :recipe_id, :user_id, :rating_value
             end
         end
     end
@@ -30,19 +32,6 @@ json.comments do
                 json.extract! comment, :id, :recipe_id, :user_id, :content, :created_at
                 json.author comment.user.username
                 json.datestamp comment.datestamp
-            end
-        end
-    end
-end
-json.saves do
-    if current_user
-        @recipe.saves.each do |save|
-            if save.user_id === current_user.id
-                json.set! save.id do
-                    json.extract! save, :id, :recipe_id, :user_id
-                    json.recipeId save.recipe_id
-                    json.userId save.user_id
-                end
             end
         end
     end

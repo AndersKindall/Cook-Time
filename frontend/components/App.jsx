@@ -21,7 +21,6 @@ const App = () => (
         <Route exact path='/recipes/:recipeId' component={RecipeShowContainer} />
         <Route exact path='/recipes' component={RecipeIndexContainer}/>
         <Route exact path='/search/:query' component={SearchRecipesContainer} />
-        <Route exact path='/users/:userId/recipebox' component={RecipeBoxContainer} />
         <Route exact path='/' component={HomePageContainer}/>
         <Redirect to='/'/>
       </Switch>

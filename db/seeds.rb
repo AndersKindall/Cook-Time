@@ -1828,3 +1828,12 @@ step75 = Step.create!(
 
 comment1 = Comment.create!(recipe_id: recipe1.id, content: "Great breakfast food!", user_id: 1)
 comment2 = Comment.create!(recipe_id: recipe1.id, content: "Making this has become a Saturday tradition in our household.  I skip the bell pepper and add canned chipotles to up the heat level.", user_id: 3)
+
+rating1 = Rating.create!(recipe_id: recipe1.id, rating_value: 4, user_id: 2)
+rating2 = Rating.create!(recipe_id: recipe1.id, rating_value: 3, user_id: 1)
+rating3 = Rating.create!(recipe_id: recipe1.id, rating_value: 2, user_id: 3)
+rating4 = Rating.create!(recipe_id: recipe1.id, rating_value: 1, user_id: 4)
+rating5 = Rating.create!(recipe_id: recipe2.id, rating_value: 1, user_id: 1)
+rating6 = Rating.create!(recipe_id: recipe2.id, rating_value: 1, user_id: 2)
+rating7 = Rating.create!(recipe_id: recipe2.id, rating_value: 1, user_id: 3)
+rating8 = Rating.create!(recipe_id: recipe2.id, rating_value: 1, user_id: 4)
