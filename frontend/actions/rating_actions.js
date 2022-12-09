@@ -3,7 +3,7 @@ import * as RatingAPIUtil from "../util/rating_api_util";
 export const RECEIVE_RATING = "RECEIVE_RATING";
 export const DELETE_RATING = "DELETE_RATING";
 
-export const receiveRating = rating=> ({
+export const receiveRating = rating => ({
     type: RECEIVE_RATING,
     rating
 })

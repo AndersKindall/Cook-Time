@@ -7,6 +7,15 @@ const ratingsReducer = (state={}, action) => {
 
     switch (action.type) {
         case RECEIVE_RATING: 
-            return Object.assign({}, newState, action.rating)
-    }
-}
+            return Object.assign({}, newState, action.rating);
+        case DELETE_RATING:
+            delete newState[action.ratingId]
+            return newState;
+        case RECEIVE_RECIPE:
+            return Object.assign({}, newState, action.payload.ratings);
+        default:
+            return state;
+    }  
+};
+
+export default ratingsReducer;

@@ -6,7 +6,7 @@ import CommentsBox from './comments_box';
 class RecipeShow extends React.Component {
     constructor(props) {
         super(props);
-        this.handleSave = this.handleSave.bind(this);
+        this.averageRating = this.averageRating.bind(this);
     }
 
     componentDidMount() {
@@ -22,17 +22,14 @@ class RecipeShow extends React.Component {
         }
     }
 
-    handleSave(recipe) {
-        if (recipe.save_id) {
-            this.props.deleteThisSave(recipe.save_id)
-        } else {
-            this.props.saveThisRecipe(recipe.id)
-        }
+    averageRating(ratings) {
+        let total = 0;
+        ratings.map(rating => (total += rating.rating_value))
+        return Math.ceil(total/(ratings.length))
     }
 
-
     render() {
-        let { recipe, currentUser, comments, addComment, updateCurrComment, deleteCurrComment } = this.props;
+        let { recipe, currentUser, comments, addComment, updateCurrComment, deleteCurrComment, ratings } = this.props;
         if (!recipe || !recipe.ingredients) return null
         return (
             <div className='recipe-show-outer-container'>
@@ -48,18 +45,39 @@ class RecipeShow extends React.Component {
                         </div>
                     </div>
                     <div className='recipe-time-description'>
-                        <div className='recipe-time-box'>
+                        <div className='recipe-time-rating-box'>
                             <div className='recipe-time-inner-box'>
                                 <span className='recipe-time-bolded'>Time</span>
                                 <span className='recipe-time'>{recipe.cook_time}</span>
                             </div>
-                            <div className='outer-bookmark'>
-                                <button className='save-recipe-btn recipe-page-btn' onClick={() => this.handleSave(recipe)} >
-                                    <div className='splash-outer-bookmark bookmark-outer-recipe'>
-                                        <div className={recipe.save_id ? 'splash-bookmark bookmark-recipe bookmark-recipe-saved' : 'splash-bookmark bookmark-recipe'} />
+                            <div className='average-rating-box'>
+                                <span className='average-rating-bolded'>Rating</span>
+                                {ratings.length === 0 ? 
+                                    <div className='average-rating-empty'>
+                                        <div className='star-rating'>
+                                            {[...Array(5)].map((star, i) => {
+                                                i += 1
+                                                return (
+                                                    <span className='average-star-off'>&#9733;</span>
+                                                )
+                                            })}
+                                            <span className='average-rating-amount'>(No Ratings Yet)</span>
+                                        </div>
                                     </div>
-                                    <p className='splash-bookmark-text'>{recipe.save_id ? 'Saved' : 'Save'}</p>
-                                </button>
+                                :
+                                    <div className='average-rating-filled'>
+                                        <div className='star-rating'>
+                                            <span className='average-rating-value'>{this.averageRating(ratings)}</span>
+                                            {[...Array(5)].map((star, i) => {
+                                                i += 1
+                                                return (
+                                                    <span className={i <= this.averageRating(ratings) ? 'average-star-on' : 'average-star-off'}>&#9733;</span>
+                                                )
+                                            })}
+                                            <span className='average-rating-amount'>({ratings.length})</span>
+                                        </div>
+                                    </div>
+                                }
                             </div>
                         </div>
                         <div className='recipe-description'>

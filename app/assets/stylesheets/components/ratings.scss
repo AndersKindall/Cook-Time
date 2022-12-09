@@ -1,0 +1,44 @@
+@import '../base/colors.scss';
+@import '../base/fonts.scss';
+
+.average-rating-box {
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    .average-rating-bolded {
+        font-family: $sans-serif-bold;
+        font-size: 16px;
+        font-weight: 700px;
+        margin-right: 30px;
+    }
+
+    .average-rating-empty, 
+    .average-rating-filled {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-family: $sans-serif;
+        font-size: 16px;
+        font-weight: 300px;
+
+        .star-rating {
+
+            .average-rating-value{
+                padding-right: 5px
+            }
+
+            .average-star-off {
+                color: $lighter-gray;
+
+            }
+
+            .average-star-on {
+                color: $black;
+            }
+
+            .average-rating-amount {
+                padding-left: 5px
+            }
+        }
+    }
+}

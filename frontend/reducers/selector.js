@@ -29,13 +29,3 @@ export const selectLovedRecipes = state => {
     return loves;
 }
 
-export const selectSavedRecipes = state => {
-    let savedRecipes = [];
-    let currentUser = state.session.currentUser
-    Object.values(state.entites.recipes).forEach(recipe => {
-        if (recipe.save_id && recipe.save_id === currentUser.id ) {
-            savedRecipes.push(recipe);
-        }
-    })
-    return savedRecipes;
-}
