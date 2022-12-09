@@ -2,6 +2,7 @@ import React from 'react'
 import IngredientList from './ingredient_list';
 import StepList from './steps_list';
 import CommentsBox from './comments_box';
+import RatingsBox from './ratings_box';
 
 class RecipeShow extends React.Component {
     constructor(props) {
@@ -29,7 +30,7 @@ class RecipeShow extends React.Component {
     }
 
     render() {
-        let { recipe, currentUser, comments, addComment, updateCurrComment, deleteCurrComment, ratings } = this.props;
+        let { recipe, currentUser, comments, addComment, updateCurrComment, deleteCurrComment, ratings, addRating, updateThisRating, deleteThisRating } = this.props;
         if (!recipe || !recipe.ingredients) return null
         return (
             <div className='recipe-show-outer-container'>
@@ -58,7 +59,7 @@ class RecipeShow extends React.Component {
                                             {[...Array(5)].map((star, i) => {
                                                 i += 1
                                                 return (
-                                                    <span className='average-star-off'>&#9733;</span>
+                                                    <span className='average-star-off' key={i}>&#9733;</span>
                                                 )
                                             })}
                                             <span className='average-rating-amount'>(No Ratings Yet)</span>
@@ -71,7 +72,7 @@ class RecipeShow extends React.Component {
                                             {[...Array(5)].map((star, i) => {
                                                 i += 1
                                                 return (
-                                                    <span className={i <= this.averageRating(ratings) ? 'average-star-on' : 'average-star-off'}>&#9733;</span>
+                                                    <span className={i <= this.averageRating(ratings) ? 'average-star-on' : 'average-star-off'} key={i}>&#9733;</span>
                                                 )
                                             })}
                                             <span className='average-rating-amount'>({ratings.length})</span>
@@ -94,8 +95,10 @@ class RecipeShow extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className='comments-outer-container'>
-                        <div className='comments-spacer' />
+                    <div className='comments-ratings-outer-container'>
+                        <div className='ratings-container'>
+                            <RatingsBox recipe={recipe} ratings={ratings} addRating={addRating} updateThisRating={updateThisRating} deleteThisRating={deleteThisRating} currentUser={currentUser} />
+                        </div>
                         <div className='comments-container'>
                             <CommentsBox comments={comments} recipe={recipe} addComment={addComment} updateCurrComment={updateCurrComment} deleteCurrComment={deleteCurrComment} currentUser={currentUser}/>
                         </div>

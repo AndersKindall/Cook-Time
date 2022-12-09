@@ -15,19 +15,6 @@ const recipesReducer = (state={}, action) => {
                 newState[recipe.id] = recipe;
             });
             return newState;
-        case RECEIVE_CURRENT_USER:
-            if (action.user.saves) {
-                Object.values(action.user.saves).map(save => {
-                    newState[save.recipe.id].save_id = save.id;
-                })
-            }
-            return newState;
-        case RECEIVE_SAVE: 
-            newState[action.save_id] = action.save;
-            return newState
-        case DELETE_ONE_SAVE:
-            delete newState[action.save_id]
-            return newState;
         default:
             return state;
     }
