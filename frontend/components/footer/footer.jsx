@@ -5,7 +5,7 @@ const Footer = () => {
         <div className='main-footer-container'>
             <div className='about-us'>
                 <h1 className='footer-title'>ABOUT US</h1>
-                <p className='home-about-text'>CookTime is a clone of the New York Times Cooking Website created by Anders Kindall, a software developer and avid home cook based in San Francisco.  Each recipe was borrowed from the real NYT Cooking and was carefully tested out in the developer's home kitchen.</p>
+                <p className='home-about-text'>Cook Time is a clone of the New York Times Cooking Website created by Anders Kindall, a software developer and avid home cook based in San Francisco.  All recipes are from the real NYT Cooking and were thoroughly and carefully tested out in the developer's home kitchen.</p>
             </div>
             <div className='learn-more'>
                 <h1 className='footer-title'>LEARN MORE</h1>

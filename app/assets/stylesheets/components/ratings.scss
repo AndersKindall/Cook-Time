@@ -83,3 +83,17 @@
         padding-bottom: 25px;
     }
 }
+
+.ratings-input-box {
+
+    .ratings-user-rating {
+
+        .ratings-user-star-on {
+            color: $btn-red;
+        }
+        
+        .ratings-user-star-off {
+            color: $lighter-gray
+        }
+    }
+}

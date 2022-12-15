@@ -24,6 +24,6 @@ export const updateThisRating = (ratingId, ratingValue) => dispatch (
 )
 
 export const deleteThisRating = (ratingId) => dispatch => (
-    RatingAPIUtil.deleteRating(commentId)
+    RatingAPIUtil.deleteRating(ratingId)
         .then(() => dispatch(deleteRating(ratingId)))
 )
