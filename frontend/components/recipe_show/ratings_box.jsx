@@ -67,7 +67,10 @@ class RatingsBox extends React.Component {
                 </div>
                 {userRating ?
                     <div className="ratings-input-box">
-                        <div className="ratings-input-text">Your rating</div>
+                        <div className="ratings-input-text-box">
+                            <div className="ratings-input-text">Your rating</div>
+                            <div className="ratings-input-clear"></div>
+                        </div>
                         <div className="ratings-input">
                                 <div className="ratings-user-rating">
                                     {[...Array(5)].map((star, i) => {
@@ -87,7 +90,7 @@ class RatingsBox extends React.Component {
                                     {[...Array(5)].map((star, i) => {
                                         i += 1
                                         return (
-                                            <span className={i <= userRating.rating_value ? 'ratings-user-star-on' : 'ratings-user-star-off'} key={i}>&#9733;</span>
+                                            <span className={i <= this.state.ratingVal ? 'ratings-user-star-on' : 'ratings-user-star-off'} key={i}>&#9733;</span>
                                         )
                                     })}
                                 </div>
