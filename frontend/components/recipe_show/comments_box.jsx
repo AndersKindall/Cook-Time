@@ -43,7 +43,7 @@ class CommentsBox extends React.Component {
                         <div className='comments-form-buttons'>
                             <div className='comments-form-cancel-button' onClick={this.clearInput} >Cancel</div>
                             <div className={this.state.input.length >= 5 ? 'comments-add-note' : 'comments-add-note-null'}
-                                onClick={this.state.input.length >= 5 ? this.handleSubmit : () => {}} >Add Note</div>
+                                onClick={this.state.input.length >= 5 ? this.handleSubmit : () => {}} >Submit</div>
                         </div>
                     </form>
                 </div>

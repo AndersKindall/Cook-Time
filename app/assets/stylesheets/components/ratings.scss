@@ -53,3 +53,33 @@
     line-height: 1.45;
     text-transform: uppercase;
 }
+
+.ratings-avg {
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+    border-bottom: 1px solid $lighter-gray;
+
+    .ratings-avg-star-large {
+        font-size: 40px;
+        padding-right: 15px;
+    }
+
+    .ratings-avg-text-bolded{
+        font-family: $sans-serif-bold;
+        font-weight: 700;
+        font-size: 16px;
+        letter-spacing: .02em;
+        line-height: 1.45;
+        
+    }
+
+    .ratings-avg-text-light{
+        font-family: $sans-serif;
+        font-weight: 300;
+        font-size: 14px;
+        padding-top: 2px;
+        color: $light-gray;
+        padding-bottom: 25px;
+    }
+}
