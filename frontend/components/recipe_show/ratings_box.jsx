@@ -46,6 +46,7 @@ class RatingsBox extends React.Component {
     render() {
         let { ratings, updateThisRating, deleteThisRating, currentUser } = this.props;
         let userRating = this.findUserRating(ratings);
+        console.log(userRating)
         return (
             <div className='ratings-outer-box'>
                 <h1 className='ratings-head'>Ratings</h1>
