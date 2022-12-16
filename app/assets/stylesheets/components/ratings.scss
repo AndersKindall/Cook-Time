@@ -86,14 +86,46 @@
 
 .ratings-input-box {
 
+    .ratings-input-text-box {
+        font-family: $sans-serif-bold;
+        font-weight: 700;
+        font-size: 16px;
+        letter-spacing: .02em;
+        line-height: 1.45;
+        padding-top: 10px;
+        padding-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+
+
+        .ratings-input-clear {
+            color: $gray;
+            text-decoration: underline;
+            cursor: pointer;
+
+            &:hover {
+                color: $lighter-gray;
+            }
+        }
+    }
     .ratings-user-rating {
+        font-size: 35px;
+        input[type="radio"] {
+            display: none;
+        }
+
+        cursor: pointer;
 
         .ratings-user-star-on {
             color: $btn-red;
         }
         
         .ratings-user-star-off {
-            color: $lighter-gray
+            color: $lighter-gray;
+
+            &:hover {
+                color: $btn-red
+            }
         }
     }
 }

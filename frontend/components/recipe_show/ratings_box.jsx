@@ -9,7 +9,7 @@ class RatingsBox extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.clearRating = this.clearRating.bind(this);
+        // this.clearRating = this.clearRating.bind(this);
         this.averageRating = this.averageRating.bind(this);
         this.findUserRating = this.findUserRating.bind(this)
         
@@ -22,12 +22,9 @@ class RatingsBox extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.addRating(this.props.recipe.id, this.state.ratingVal)
-    }
-
-    clearRating(rating) {
-        this.props.deleteThisRating(rating.id);
-        this.setState({ ratingVal: 0 })
+        let newRatingVal = e.target.value;
+        this.setState({ ratingVal: newRatingVal});
+        this.props.addRating(this.props.recipe.id, newRatingVal);
     }
 
     averageRating(ratings) {
@@ -69,7 +66,7 @@ class RatingsBox extends React.Component {
                     <div className="ratings-input-box">
                         <div className="ratings-input-text-box">
                             <div className="ratings-input-text">Your rating</div>
-                            <div className="ratings-input-clear"></div>
+                            <div className="ratings-input-clear" onClick={() => deleteThisRating(userRating.id)}>Clear</div>
                         </div>
                         <div className="ratings-input">
                                 <div className="ratings-user-rating">
@@ -84,13 +81,23 @@ class RatingsBox extends React.Component {
                     </div>
                     :
                     <div className="ratings-input-box">
-                        <div className="ratings-input-text">Your rating</div>
+                        <div className="ratings-input-text-box">
+                            <div className="ratings-input-text">Your rating</div>
+                        </div>
                         <div className="ratings-input">
                                 <div className="ratings-user-rating">
                                     {[...Array(5)].map((star, i) => {
                                         i += 1
                                         return (
-                                            <span className={i <= this.state.ratingVal ? 'ratings-user-star-on' : 'ratings-user-star-off'} key={i}>&#9733;</span>
+                                            <label key={i}>
+                                                <input
+                                                    type='radio'
+                                                    className={i <= this.state.ratingVal ? 'ratings-user-star-on' : 'ratings-user-star-off'}
+                                                    value={i}
+                                                    onClick={this.handleSubmit}
+                                                />
+                                                <span className='ratings-user-star-off'>&#9733;</span>
+                                            </label>
                                         )
                                     })}
                                 </div>
