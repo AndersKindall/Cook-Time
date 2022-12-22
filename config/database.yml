@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: Cook-Time_production
-  username: Cook-Time
-  password: <%= ENV['COOK-TIME_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  # database: Cook-Time_production
+  # username: Cook-Time
+  # password: <%= ENV['COOK-TIME_DATABASE_PASSWORD'] %>
