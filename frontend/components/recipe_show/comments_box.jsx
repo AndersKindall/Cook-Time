@@ -10,8 +10,8 @@ class CommentsBox extends React.Component {
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.clearInput = this.clearInput.bind(this)
-
+        this.clearInput = this.clearInput.bind(this);
+        this.findComments = this.findComments.bind(this)
     }
 
     handleChange(e) {
@@ -29,8 +29,19 @@ class CommentsBox extends React.Component {
         this.setState({ input: '' })
     }
 
+    findComments(comments) {
+        let recipeComms = [];
+        comments.map(comment => {
+            if (comment.recipe_id === this.props.recipe.id) {
+                recipeComms.push(comment)
+            }
+        })
+        return recipeComms;
+    }
+
     render() {
-        const {comments, updateCurrComment, deleteCurrComment, currentUser} = this.props
+        const {comments, updateCurrComment, deleteCurrComment, currentUser} = this.props;
+        let recipeComments = this.findComments(comments);
         return (
             <div className='comments-outer-box'>
                 <h1 className='comments-head'>Cooking Notes</h1>
@@ -57,15 +68,15 @@ class CommentsBox extends React.Component {
                 }
                 <div className='comments-container-head-box'>
                     <div className='comments-container-head'>
-                        <h1 className='comments-container-head-title'> All Notes <span className='comments-container-comments-number'>({comments.length})</span></h1>
+                        <h1 className='comments-container-head-title'> All Notes <span className='comments-container-comments-number'>({recipeComments.length})</span></h1>
                     </div>
                 </div>
                 <div className='comments-container' >
-                    {comments.length === 0 ?
+                    {recipeComments.length === 0 ?
                         <p className='comments-container-empty' >There are no notes on this recipe yet.</p>
                     :
                         <div className='comments-container-comments' >
-                            {comments.map((comment, index) => {
+                            {recipeComments.map((comment, index) => {
                                 return <CommentArticle key={index} comment={comment} updateCurrComment={updateCurrComment} deleteCurrComment={deleteCurrComment} currentUser={currentUser} />
                             })} 
                         </div>                            

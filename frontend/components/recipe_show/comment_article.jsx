@@ -28,7 +28,7 @@ class CommentArticle extends React.Component {
 
     render() {
         
-        let {comment, deleteCurrComment, currentUser} = this.props;
+        const {comment, deleteCurrComment, currentUser} = this.props;
         return (
             <div className='comments-article-outer-container'>
                 <div className='comments-article-author-container'>

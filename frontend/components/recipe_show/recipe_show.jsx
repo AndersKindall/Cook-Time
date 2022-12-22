@@ -28,10 +28,6 @@ class RecipeShow extends React.Component {
         }
     }
 
-    componentWillUnmount() {
-        this.forceUpdate()
-    }
-
     averageRating(ratings) {
         let total = 0;
         let count = 0;
