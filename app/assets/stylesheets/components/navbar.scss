@@ -19,7 +19,9 @@
     height: 65px;
     width: 20%;
     border-right: 1px solid $lighter-gray;
+    border-bottom: 1px solid $lighter-gray;
     align-items: center;
+    object-fit: cover;
 }
 
 .inner-home-link {
@@ -29,6 +31,7 @@
 .logo {
     background-color: white;
     float: center;
+    max-height: 60px;
     width: 95%;
 }
 
