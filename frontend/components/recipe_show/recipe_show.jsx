@@ -7,7 +7,12 @@ import RatingsBox from './ratings_box';
 class RecipeShow extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            avgRating: null
+        }
         this.averageRating = this.averageRating.bind(this);
+        this.getNumRatings = this.getNumRatings.bind(this);
+
     }
 
     componentDidMount() {
@@ -18,20 +23,41 @@ class RecipeShow extends React.Component {
 
     componentDidUpdate(oldProps) {
         if (this.props.match.params.recipeId !== oldProps.match.params.recipeId) {
-            this.props.getRecipe(this.props.match.params.recipeId)
+            this.props.getRecipe(this.props.match.params.recipeId);
             this.props.clearSearch();
         }
     }
 
+    componentWillUnmount() {
+        this.forceUpdate()
+    }
+
     averageRating(ratings) {
         let total = 0;
-        ratings.map(rating => (total += rating.rating_value))
-        return Math.ceil(total/(ratings.length))
+        let count = 0;
+        ratings.map(rating =>  {
+            if (rating.recipe_id === this.props.recipe.id) {
+                total += rating.rating_value
+                count += 1
+            }
+        })
+        return Math.ceil(total/(count))
+    }
+
+    getNumRatings(ratings) {
+        let total = 0;
+        ratings.map(rating =>  {
+            if (rating.recipe_id === this.props.recipe.id) {
+                total += 1
+            }
+        })
+        return total;
     }
 
     render() {
         let { recipe, currentUser, comments, addComment, updateCurrComment, deleteCurrComment, ratings, addRating, updateThisRating, deleteThisRating } = this.props;
-        if (!recipe || !recipe.ingredients) return null
+        let numRatings = this.getNumRatings(ratings);
+        if (!recipe || !recipe.ingredients) return null;
         return (
             <div className='recipe-show-outer-container'>
                 <div className='recipe-show-container'>
@@ -53,7 +79,7 @@ class RecipeShow extends React.Component {
                             </div>
                             <div className='average-rating-box'>
                                 <span className='average-rating-bolded'>Rating</span>
-                                {ratings.length === 0 ? 
+                                {numRatings === 0 ? 
                                     <div className='average-rating-empty'>
                                         <div className='star-rating'>
                                             {[...Array(5)].map((star, i) => {
@@ -75,7 +101,7 @@ class RecipeShow extends React.Component {
                                                     <span className={i <= this.averageRating(ratings) ? 'average-star-on' : 'average-star-off'} key={i}>&#9733;</span>
                                                 )
                                             })}
-                                            <span className='average-rating-amount'>({ratings.length})</span>
+                                            <span className='average-rating-amount'>({numRatings})</span>
                                         </div>
                                     </div>
                                 }

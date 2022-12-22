@@ -129,3 +129,14 @@
         }
     }
 }
+
+.ratings-input-no-user {
+    font-family: $sans-serif-bold;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: .02em;
+    line-height: 1.45;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    display: flex;
+}
