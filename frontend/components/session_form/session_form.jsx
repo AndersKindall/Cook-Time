@@ -24,18 +24,6 @@ class SessionForm extends React.Component {
         });
     }
 
-    // renderErrors() {
-    //     return(
-    //         <ul>
-    //           {this.props.errors.map((error, i) => (
-    //             <li key={`error-${i}`}>
-    //               {error}
-    //             </li>
-    //           ))}
-    //         </ul>
-    //     );
-    // }
-
     loginDemoUser(e) {
         e.preventDefault();
         this.props.closeModal();
@@ -55,7 +43,6 @@ class SessionForm extends React.Component {
                 <div onClick={this.props.closeModal} className="close-modal-btn">
                     <i className='fas fa-times'/>
                 </div>
-                {/* {this.renderErrors()} */}
                 <div className='modal-submit-btn'>
                     <input type='submit' value="Log In as Demo User" className='btn demo-btn' onClick={this.loginDemoUser} />
                 </div>

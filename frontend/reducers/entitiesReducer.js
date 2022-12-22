@@ -5,7 +5,7 @@ import recipesReducer from "./recipes_reducer";
 import commentsReducer from "./comments_reducer";
 import searchReducer from "./search_reducer";
 import searchPageReducer from "./search_page_reducer";
-import ratingsReducer from "./ratings_reducer";
+import ratingsReducer from "./ratings_reducer.js";
 
 const entitiesReducer = combineReducers({
     users: usersReducer,

@@ -10,7 +10,6 @@ class RatingsBox extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        // this.clearRating = this.clearRating.bind(this);
         this.averageRating = this.averageRating.bind(this);
         this.findUserRating = this.findUserRating.bind(this);
         this.getNumRatings = this.getNumRatings.bind(this);
@@ -62,7 +61,7 @@ class RatingsBox extends React.Component {
     }
 
     render() {
-        let { ratings, updateThisRating, deleteThisRating, currentUser } = this.props;
+        let { ratings, deleteThisRating, currentUser } = this.props;
         let userRating = this.state.ratingVal;
         let avgRating = this.state.avgRatingVal;
         ratings ? avgRating = this.averageRating(ratings) : avgRating = this.state.avgRatingVal;
