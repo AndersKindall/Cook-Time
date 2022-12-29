@@ -12,7 +12,6 @@
     "react-redux": "^8.0.1",
     "react-router-dom": "^5.3.3",
     "redux": "^4.2.0",
-    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.1",
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2"
@@ -32,7 +31,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {},
+  "devDependencies": {
+    "redux-logger": "^3.0.6"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AndersKindall/Cook-Time.git"
@@ -42,6 +43,7 @@
   },
   "homepage": "https://github.com/AndersKindall/Cook-Time#readme",
   "engines": {
-    "node": "16.15.0"
+    "node": "16.15.0",
+    "npm": "8.5.5"
   }
 }
