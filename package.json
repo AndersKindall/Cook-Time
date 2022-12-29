@@ -23,7 +23,7 @@
     "test": "test"
   },
   "scripts": {
-    "build": "npm install --prefix frontend && npm run build --prefix frontend",
+    "build": "webpack --mode=production",
     "start": "webpack",
     "postinstall": "webpack",
     "webpack": "webpack --watch --mode=development"
