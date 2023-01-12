@@ -4,19 +4,19 @@
     <title>CookTime</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
     <%= image_tag 'cook-time-cropped.png' %>
     <%= image_tag 'modal-image.jpeg' %>
     <%= image_tag 'shakshuka.png' %>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <script src="https://kit.fontawesome.com/cded451fb1.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       window.logo = "<%=  image_url('cook-time-cropped.png') %>"
       window.modalImg = "<%=  image_url('modal-image.jpeg') %>"
       window.splashImg = "<%=  image_url('shakshuka.png') %>"
     </script>
+    <%= javascript_include_tag 'application' %>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
