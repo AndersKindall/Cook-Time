@@ -6,6 +6,7 @@
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+    <%= javascript_include_tag 'application' %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= image_tag 'cook-time-cropped.png' %>
     <%= image_tag 'modal-image.jpg' %>
@@ -20,7 +21,6 @@
     <script type="text/javascript">
       window.splashImg = "<%=  image_url('shakshuka.png') %>"
     </script>
-    <%= javascript_include_tag 'application' %>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
